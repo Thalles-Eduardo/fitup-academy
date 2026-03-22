@@ -18,36 +18,37 @@ export default function WeeklyOverview() {
   const [hovered, setHovered] = useState<number | null>(null);
   const maxValue = Math.max(...data.map((d) => d.value));
 
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
+    const el = containerRef.current;
+    if (!el) return;
 
     // ENTRADA DO CARD
-    gsap.from(containerRef.current, {
+    gsap.from(el, {
       y: 40,
       opacity: 0,
       duration: 0.6,
-      ease: "power2.out"
+      ease: "power2.out",
     });
 
-    // BARRAS SUBINDO
-    gsap.from(".bar", {
+    // BARRAS SUBINDO (ESCOPADO)
+    gsap.from(el.querySelectorAll(".bar"), {
       height: 0,
       duration: 1,
       stagger: 0.08,
       ease: "power3.out",
-      delay: 0.2
+      delay: 0.2,
     });
 
-  }, []);
+  }, { scope: containerRef });
 
   return (
     <div
       ref={containerRef}
+      className="weekly-overview"
       style={{
-        position: "absolute",
-        top: 20,
-        right: 20,
+        position: "relative", 
         display: "inline-flex",
         flexDirection: "column",
         alignItems: "center",
@@ -105,7 +106,6 @@ export default function WeeklyOverview() {
                 </div>
               )}
 
-              {/* 👇 IMPORTANTE: className "bar" */}
               <div
                 className="bar"
                 style={{
@@ -115,8 +115,8 @@ export default function WeeklyOverview() {
                   background: isActive
                     ? "#2e2e2e"
                     : isHovered
-                      ? "#b5b0a8"
-                      : "#cdc9c2",
+                    ? "#b5b0a8"
+                    : "#cdc9c2",
                   transition: "background 0.2s ease, transform 0.15s ease",
                   transform: isHovered ? "scaleY(1.04)" : "scaleY(1)",
                   transformOrigin: "bottom",

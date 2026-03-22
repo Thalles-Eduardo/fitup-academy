@@ -15,7 +15,22 @@
   --color-black: #000000;
   --color-dark-blue: #141C31;
   --color-light-blue: #4C6079;
-  --color-background-hero: rgb(188, 183, 179);
+  --color-background-hero: #bcb7b3;
+  --color-gray: #CAD0D0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -60,6 +75,13 @@ body {
   max-width: 1300px;
   margin: 0 auto;
 }
+
+.advantage-section {
+  box-sizing: border-box;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 
 .dark {
   --background: oklch(0.145 0 0);

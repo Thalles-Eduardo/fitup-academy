@@ -4,13 +4,13 @@ import Image from "next/image";
 import "./hero.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+import { SplitText, Flip, ScrollTrigger } from "gsap/all";
 
 import WeeklyOverview from "@/components/ui/WeeklyOverview";
 import { Separator } from "@/components/ui/separator";
 
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, Flip);
 
 export default function Hero() {
 

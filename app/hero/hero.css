@@ -105,7 +105,6 @@ nav {
     color: var(--color-black);
     opacity: 0.75;
     letter-spacing: 1.5;
-
 }
 
 .actions-hero {
@@ -183,6 +182,7 @@ nav {
     display: flex;
     gap: 40px;
     margin-top: 120px;
+    margin-bottom: 220px;
 }
 
 .stat-item {
@@ -213,6 +213,9 @@ nav {
     width: clamp(700px, 40vw, 350px);
     height: clamp(500px, 40vw, 350px);
     position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: end;
 
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
@@ -287,8 +290,8 @@ nav {
 }
 
 .weekly-overview {
-    position: absolute;
-    width: clamp(200px, 30vw, 200px);
+    
+    width: clamp(280px, 30vw, 200px);
     padding: 10px;
     top: 20px;
     right: 20px;
@@ -325,22 +328,16 @@ nav {
 }
 
 
-
-
-
-
-
 .star {
     position: absolute;
     bottom: 136px;
     left: 30px;
     opacity: 0.5;
-
 }
 
 .star-right {
-    position: relative;
-    bottom: 36px;
-    right: 50px;
+    position: absolute;
+    top: -40px;
+    left: -40px;
     opacity: 1;
 }
