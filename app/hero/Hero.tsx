@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { SplitText, Flip, ScrollTrigger } from "gsap/all";
 
 import WeeklyOverview from "@/components/ui/WeeklyOverview";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/ui/Separator";
 
 
 gsap.registerPlugin(SplitText, Flip);

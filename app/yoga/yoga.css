@@ -1,0 +1,55 @@
+.yoga-section {
+    box-sizing: border-box;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.title h2 {
+    width: 800px;
+    font-family: var(--font-inter);
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--color-dark-blue);
+}
+
+.title h2 span {
+    color: var(--color-light-blue);
+}
+
+.title p {
+    width: 550px;
+    font-family: var(--font-inter);
+    font-weight: bold;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.container-yoga {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    row-gap: 3.5rem;
+}
+
+button {
+    cursor: pointer;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 19rem;
+    padding: 0.5rem;
+    border-radius: 333px;
+    font-family: var(--font-inter);
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background: var(--color-dark-blue);
+    margin-top: 2rem;
+}

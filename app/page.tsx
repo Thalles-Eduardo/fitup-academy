@@ -2,6 +2,7 @@
 
 import Advantage from "./advantage/Advantage";
 import Hero from "./hero/Hero";
+import Yoga from "./yoga/Yoga";
 
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       </div>
       <div className="advantage">
         <Advantage />
+      </div>
+      <div className="yoga">
+        <Yoga />
       </div>
     </main>
   );
