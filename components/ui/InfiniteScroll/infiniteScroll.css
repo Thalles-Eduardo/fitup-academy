@@ -1,0 +1,47 @@
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    margin: 0 1;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 12rem;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-track img{
+    position: relative;
+    top: 5rem;
+    width: 152px;
+    height: 141px;
+}
+.carousel-track h2 {
+    font-family: var(--font-inter);
+    font-size: 84px;
+    font-weight: bold;
+    color: var(--color-light-blue);
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

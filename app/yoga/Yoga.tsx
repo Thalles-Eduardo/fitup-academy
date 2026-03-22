@@ -23,7 +23,7 @@ export default function Yoga() {
                 <YogaModel image="/images/Yoga-6.png" textButton="Strength Flow"/>
             </div>
 
-            <button>Check All</button>
+            <button className="button-yoga">Check All</button>
             
         </section>
     )

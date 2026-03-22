@@ -38,7 +38,7 @@
     row-gap: 3.5rem;
 }
 
-button {
+.button-yoga {
     cursor: pointer;
     display: flex;
     margin: 0 auto;

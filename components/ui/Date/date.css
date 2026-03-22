@@ -1,0 +1,39 @@
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.title-date {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--color-dark-blue);
+    font-weight: bold;
+    font-family: var(--font-inter);
+}
+
+.title-date p {
+    font-size: 28px;
+}
+
+.title-date h2 {
+    width: 400px;
+    font-size: 48px;
+}
+
+.time {
+    width: 250px;
+    font-family: var(--font-inter);
+    font-weight: bold;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.button-date {
+    padding: 14px 48px;
+    border-radius: 333px;
+    color: var(--color-light-blue);
+    border: 1px solid var(--color-dark-blue);
+}
