@@ -1,25 +1,34 @@
 .section-advantage {
-    background: white;
+    padding: 24px 0;
+    /* era sem padding, agora com respiro menor */
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .advante-container {
     height: 210px;
     margin: 0 auto;
     max-width: 1000px;
-    min-height: clamp(300px, 40vh, 400px);
+    min-height: clamp(200px, 28vh, 320px);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 0;
 
     padding: 24px;
     gap: 16px;
     border-radius: 50px;
-
-
-
     background: linear-gradient(90deg, rgba(189, 185, 182, 1) 0%, rgba(255, 255, 255, 1) 37%, rgba(189, 185, 182, 1) 100%);
 }
 
+
+.legs {
+    width: 400px;
+    height: 420px;
+    position: relative;
+    top: 4.8rem;
+
+}
 
 .info {
     flex: 0 0 50%;
@@ -30,7 +39,7 @@
 }
 
 .info h2 {
-    font-size: 13px;
+    font-size: 10px;
     line-height: 1.4;
     width: fit-content;
     padding: 8px 16px;
@@ -47,7 +56,7 @@
 
 .info p {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.6;
     color: var(--color-black);
     opacity: 0.75;
@@ -65,12 +74,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+
+
     width: 170px;
-    min-height: 110px;
-    max-height: 210px;
+    height: 110px;
     border-radius: 16px;
-    padding: 14px;
+
     gap: 12px;
     background: rgba(239, 239, 238, 0.5);
 
@@ -78,17 +87,9 @@
 }
 
 
-
-
-.legs {
-    position: relative;
-    top: 48px;
-}
-
 .container-image .image,
 .card-left img,
-.card-right img,
-.container-right>img {
+.card-right img {
     border-radius: 8px;
     width: 48px;
     height: 48px;
@@ -101,14 +102,15 @@
     width: 64px;
     height: 64px;
     position: relative;
-    top: 20px;
+    top: 0.5rem;
 }
 
 .container-galeria button {
+    position: relative;
+    bottom: 10;
     z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
     border: 1px solid #A0A0A0;
     border-radius: 18px;
@@ -118,7 +120,6 @@
 
 
     background: rgba(255, 255, 255, 0.35);
-    
     backdrop-filter: blur(13.5px);
     -webkit-backdrop-filter: blur(13.5px);
     border-radius: 10px;
@@ -130,22 +131,22 @@
 
 
 .container-galeria button span {
-    font-size: 11px;
-    font-weight: 400;
+    font-size: 9px;
+    font-weight: 500;
     margin-left: 0;
     font-family: var(--font-inter);
 }
 
 .container-galeria button img {
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
 }
 
 /* Segunda seção */
-section>.container {
+.dieta {
     max-width: 1300px;
     margin: 0 auto;
-    margin-top: 140px;
+    margin-top: 10rem;
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 32px;
@@ -160,7 +161,7 @@ section>.container {
 }
 
 .container-left h1 {
-    font-size: 80px;
+    font-size: clamp(40px, 5.5vw, 72px);
     line-height: 1.15;
     margin: 0;
     font-weight: 800;
@@ -201,7 +202,8 @@ section>.container {
     flex-direction: column;
     gap: 12px;
     width: 280px;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
+    justify-content: center;
 
     border-radius: 20px;
     background: linear-gradient(90deg, rgba(20, 28, 49, 1) 0%, rgba(41, 57, 100, 1) 70%, rgba(62, 86, 151, 1) 100%);
@@ -209,17 +211,18 @@ section>.container {
 }
 
 .card-right {
+    position: relative;
+    top: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: 90px;
     border-radius: 20px;
     width: 280px;
     background: var(--color-gray);
     padding: 20px;
     height: 90px;
 }
+
 
 .card-left>div,
 .card-right>div {
@@ -236,8 +239,8 @@ section>.container {
 }
 
 .icon-image {
-    width: 60px !important;
-    height: 60px !important;
+    width: 60px;
+    height: 60px;
     min-width: 40px;
     min-height: 40px;
     border-radius: 12px;
@@ -252,11 +255,10 @@ section>.container {
     overflow: hidden;
 }
 
-.icon-image span,
-.icon-image>span,
-.icon-image>img {
-    width: 32px !important;
-    height: 32px !important;
+
+.icon-image img {
+    width: 24px;
+    height: 24px;
 }
 
 .card-left p,
@@ -271,7 +273,8 @@ section>.container {
 }
 
 .card-left button {
-    margin-top: 40px;
+    position: relative;
+    top: 10px;
     width: 180px;
     display: flex;
     justify-content: center;
@@ -304,7 +307,7 @@ section>.container {
     border-radius: 20px;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 18px;
+    
 }
 
 .container-calories {
@@ -365,14 +368,15 @@ section>.container {
 
 }
 
-.image-calories {
-    margin: 0 auto;
-}
 
-.calories {
+.img-calories {
+    position: relative;
+    bottom: 1.8rem;
     width: 200px;
     height: auto;
+    margin: 0 auto;
 
+    scale: 1.5;
 }
 
 

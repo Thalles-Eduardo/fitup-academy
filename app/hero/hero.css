@@ -5,13 +5,10 @@ nav {
     padding: 20px 0px 0px 0px;
 }
 
-
-
 .container-hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 
@@ -80,6 +77,11 @@ nav {
     font-weight: bold;
     cursor: pointer;
     font-family: var(--font-inter);
+}
+
+.contact-btn img {
+    width: 20px;
+    height: 20px;
 }
 
 .left-hero {
@@ -159,6 +161,7 @@ nav {
 .community {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .community p {
@@ -272,9 +275,14 @@ nav {
     align-items: center;
 }
 
+.member img {
+    width: 32px;
+    height: auto;
+}
+
 .image-member {
     position: relative;
-    border-radius: 9999px;
+    border-radius: 50%;
     border: 2px solid white;
 }
 

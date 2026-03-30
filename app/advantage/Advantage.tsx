@@ -6,7 +6,7 @@ export default function Advantage() {
     return (
         <section className="section-advantage">
             <div className="advante-container">
-                <Image className="legs" src="/images/Legs.png" width={468} height={468} alt="Legs" />
+                <Image className="legs" src="/images/Legs.png" width={602} height={622} alt="Legs" />
                 <div className="info">
                     <h2>WHY FITUP WORKS</h2>
                     <p>
@@ -17,23 +17,23 @@ export default function Advantage() {
                     
                     <div className="container-galeria">
                         <div className="container-image">
-                            <Image className="image" src="/images/Liver.png" alt="Liver" width={48} height={48} />
-                            <button> <span>healthy liver</span> <Image src="/images/Near.png" alt="Near" width={28} height={18} /></button>
+                            <Image className="image" src="/images/Liver.png" alt="Liver" width={208} height={141} />
+                            <button> <span>healthy liver</span> <Image src="/images/Near.png" alt="Near" width={28} height={28} /></button>
                         </div>
                         <div className="container-image">
-                            <Image className="image" src="/images/Heart.png" alt="Heart" width={48} height={48} />
-                            <button> <span>healthy heart</span> <Image src="/images/Near.png" alt="Near" width={48} height={48} /></button>
+                            <Image className="image" src="/images/Heart.png" alt="Heart" width={93} height={146} />
+                            <button> <span>healthy heart</span> <Image src="/images/Near.png" alt="Near" width={28} height={28} /></button>
                         </div>
                         <div className="container-image">
-                            <Image className="image" src="/images/Cells.png" alt="Cells" width={48} height={48} />
-                            <button> <span>healthy cells</span> <Image src="/images/Near.png" alt="Near" width={48} height={48} /></button>
+                            <Image className="image" src="/images/Cells.png" alt="Cells" width={179} height={92} />
+                            <button> <span>healthy cells</span> <Image src="/images/Near.png" alt="Near" width={28} height={28} /></button>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div className="container">
+            <div className="dieta">
                 <div className="container-left">
                     <h1>Fit your body with
                         balanced <span>meals</span>
@@ -48,11 +48,11 @@ export default function Advantage() {
                         <div className="card-left">
                             <div>
                                 <div className="icon-image">
-                                    <Image className="ham" src="/images/Ham.png" alt="Ham" width={12} height={12} />
+                                    <Image className="ham" src="/images/Ham.png" alt="Ham" width={24} height={24} />
                                 </div>
                                 <p>Non Vegan</p>
                             </div>
-                            <button>Start Journey <Image src="/images/Right-Arrow.png" alt="Right Arrow" width={48} height={48} /></button>
+                            <button>Start Journey <Image src="/images/Right-Arrow.png" alt="Right Arrow" width={24} height={22} /></button>
                         </div>
                         <div className="card-right">
                             <div>
@@ -79,12 +79,9 @@ export default function Advantage() {
                         <p className="sub-title">Stay on track with meal guidance</p>
                     </div>
 
-                    <div className="image-calories">
-                        <Image className="calories" src="/images/Food.png" width={48} height={48} alt="Food" />
-                    </div>
-
+                    <Image className="img-calories" src="/images/Food.png" width={333} height={499} alt="Food" />
                 </div>
-
+                
             </div>
 
 

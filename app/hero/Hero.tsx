@@ -120,8 +120,8 @@ export default function Hero() {
                     <Image
                         src="/images/Logo.png"
                         alt="FitUp Academy Logo"
-                        width={64}
-                        height={64}
+                        width={70}
+                        height={56}
                     />
                     <h1>FitUp</h1>
                 </div>
@@ -142,8 +142,8 @@ export default function Hero() {
                         <Image
                             src="/images/Contact.png"
                             alt="Contact Icon"
-                            width={20}
-                            height={20}
+                            width={32}
+                            height={32}
                         />
                         CONTACT US
                     </button>
@@ -165,26 +165,26 @@ export default function Hero() {
                                 <Image
                                     src="/images/Discord.png"
                                     alt="Community Icon"
-                                    width={20}
-                                    height={20}
+                                    width={18}
+                                    height={18}
                                 />
                                 <Image
                                     src="/images/Facebook.png"
                                     alt="Community Icon"
-                                    width={20}
-                                    height={20}
+                                    width={18}
+                                    height={18}
                                 />
                                 <Image
                                     src="/images/Telegram.png"
                                     alt="Community Icon"
-                                    width={20}
-                                    height={20}
+                                    width={18}
+                                    height={18}
                                 />
                                 <Image
                                     src="/images/Twitter.png"
                                     alt="Community Icon"
-                                    width={20}
-                                    height={20}
+                                    width={18}
+                                    height={18}
                                 />
                             </div>
                         </div>
@@ -214,30 +214,30 @@ export default function Hero() {
                                     <Image
                                         className="image-member"
                                         src="/images/Client-1.png"
-                                        alt="Background Image"
-                                        width={32}
-                                        height={32}
+                                        alt="Client"
+                                        width={51}
+                                        height={34}
                                     />
                                     <Image
                                         className="image-member"
                                         src="/images/Client-2.png"
-                                        alt="Background Image"
-                                        width={32}
-                                        height={32}
+                                        alt="Client"
+                                        width={51}
+                                        height={34}
                                     />
                                     <Image
                                         className="image-member"
                                         src="/images/Client-3.png"
-                                        alt="Background Image"
-                                        width={32}
-                                        height={32}
+                                        alt="Client"
+                                        width={51}
+                                        height={34}
                                     />
                                     <Image
                                         className="image-member"
                                         src="/images/Client-4.png"
-                                        alt="Background Image"
-                                        width={32}
-                                        height={32}
+                                        alt="Client"
+                                        width={51}
+                                        height={34}
                                     />
                                 </div>
                                 <p>12k more</p>
