@@ -1,11 +1,13 @@
+.section-footer {
+    position: relative;
+    height: 120vh;
+}
+
 .container-date {
-    box-sizing: border-box;
-    max-width: 1300px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    margin-bottom: 10rem;
+
 }
 
 footer {

@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 250px;
     padding: 0 2.5rem 0;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -27,28 +27,101 @@
 .position {
     position: absolute;
     object-fit: cover;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 2;
+
 }
 
-.yoga-model button {
-    color: rgb(0, 0, 0, 0.75);
+
+
+/* botão base */
+.btn-yoga-bubbles {
+    --c1: rgba(255, 255, 255, 0.55);
+    --c2: var(--color-light-blue);
+    --size-letter: 18px;
+
     width: 19rem;
     display: flex;
     justify-content: center;
-    padding: 0.5rem 1rem;
-    gap: 0.5rem;
-    z-index: 3;
-    position: relative;
-    margin-top: auto;
+    align-items: center;
+    gap: 0.6rem;
+
+    padding: 0.6rem 1.2rem;
+    font-size: var(--size-letter);
     font-family: var(--font-inter);
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    background: var(--c1);
+    border: 2px solid var(--c2);
+    border-radius: 14px;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    
+
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+/* texto */
+.btn-yoga-bubbles .text {
+    color: var(--c2);
+    font-weight: 600;
+    z-index: 2;
+    position: relative;
+    transition: 0.6s ease;
+}
+
+/* bolhas */
+.btn-yoga-bubbles::before,
+.btn-yoga-bubbles::after {
+    content: "";
+    position: absolute;
+    width: 180%;
+    aspect-ratio: 1/1;
+    background: var(--c2);
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.9s cubic-bezier(0.76, 0, 0.24, 1);
+    z-index: 1;
+}
+
+.btn-yoga-bubbles::before {
+    top: 0;
+    left: 0;
+}
+
+.btn-yoga-bubbles::after {
+    top: 100%;
+    left: 100%;
+}
+
+/* hover */
+.btn-yoga-bubbles:hover::before,
+.btn-yoga-bubbles:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-yoga-bubbles:hover .text {
+    color: white;
+}
+
+/* seta */
+.btn-yoga-bubbles img {
+    transition: transform 0.3s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.btn-yoga-bubbles:hover img {
+    transform: translateX(6px);
+}
+
+/* clique */
+.btn-yoga-bubbles:active {
+    transform: scale(0.98);
 }

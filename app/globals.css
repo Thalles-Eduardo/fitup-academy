@@ -110,11 +110,13 @@ section {
 
 .panel-yoga {
   z-index: 3;
-  background-color: var(--color-dark-blue);
+  background-color: var(--color-gray);
 }
 
 .panel-footer {
   z-index: 4;
+  background-color: #FFEF00;
+  
 }
 
 

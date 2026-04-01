@@ -5,15 +5,15 @@
 }
 
 .item {
-    flex: 0 0 auto;
-    width: 200px;
-    height: 300px;
+  
+    width: 100px;
+    height: 100px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     color: white;
     font-weight: bold;
-    margin: 0 1;
+
 }
 
 .carousel-track {
@@ -25,13 +25,13 @@
 
 .carousel-track img{
     position: relative;
-    top: 5rem;
-    width: 152px;
-    height: 141px;
+    top: 1rem;
+    width: 76px;
+    height: 70.5px;
 }
 .carousel-track h2 {
     font-family: var(--font-inter);
-    font-size: 84px;
+    font-size: clamp(1.5rem, 2.5vw, 3.5rem);
     font-weight: bold;
     color: var(--color-light-blue);
 

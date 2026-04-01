@@ -15,24 +15,25 @@
 }
 
 .title-date p {
-    font-size: 28px;
+    font-size: clamp(1.25rem, 2.5vw, 1.25rem);
 }
 
 .title-date h2 {
     width: 400px;
-    font-size: 48px;
+    font-size: clamp(1.5rem, 2.5vw, 1.5rem);
 }
 
 .time {
     width: 250px;
     font-family: var(--font-inter);
     font-weight: bold;
-    font-size: 16px;
+    font-size: clamp(0.75rem, 2.5vw, 0.75rem);
     color: rgba(0, 0, 0, 0.4);
 }
 
 .button-date {
     padding: 14px 48px;
+    font-size: clamp(0.75rem, 2.5vw, 0.75rem);
     border-radius: 333px;
     color: var(--color-light-blue);
     border: 1px solid var(--color-dark-blue);

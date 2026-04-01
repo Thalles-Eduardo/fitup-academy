@@ -1,32 +1,27 @@
-.yoga-section {
-    box-sizing: border-box;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-.title {
+.title-yoga {
     display: flex;
     justify-content: space-between;
     align-items: end;
+    padding: 24px 0;
 }
 
-.title h2 {
+.title-yoga h2 {
     width: 800px;
     font-family: var(--font-inter);
-    font-size: 80px;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: bold;
     color: var(--color-dark-blue);
 }
 
-.title h2 span {
+.title-yoga h2 span {
     color: var(--color-light-blue);
 }
 
-.title p {
+.title-yoga p {
     width: 550px;
     font-family: var(--font-inter);
     font-weight: bold;
-    font-size: 18px;
+    font-size: clamp(0.875rem, 2vw, 0.5rem);
     color: rgba(255, 255, 255, 0.5);
 }
 
@@ -37,6 +32,7 @@
     justify-content: space-between;
     row-gap: 3.5rem;
 }
+
 
 .button-yoga {
     cursor: pointer;
@@ -52,4 +48,57 @@
     color: white;
     background: var(--color-dark-blue);
     margin-top: 2rem;
+    --color: var(--color-light-blue);
+    border: 2px solid var(--color-light-blue);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.button-yoga::before,
+.button-yoga::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--color);
+    z-index: -1;
+
+    transform: translate(-50%, -50%);
+    transition: 0.7s ease-in-out;
+}
+
+.button-yoga::before {
+    top: -1em;
+    left: -1em;
+}
+
+.button-yoga::after {
+    top: calc(100% + 1em);
+    left: calc(100% + 1em);
+}
+
+/* animação hover */
+.button-yoga:hover::before,
+.button-yoga:hover::after {
+    width: 420px;
+    height: 420px;
+}
+
+/* efeito hover mantendo suas cores */
+.button-yoga:hover {
+    background: linear-gradient(135deg,
+            var(--color-dark-blue),
+            var(--color-light-blue));
+    border-color: var(--color-light-blue);
+    transform: translateY(-3px);
+}
+
+/* clique */
+.button-yoga:active {
+    transform: scale(0.97);
+    filter: brightness(0.9);
 }

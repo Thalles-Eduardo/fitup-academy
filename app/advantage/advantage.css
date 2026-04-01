@@ -1,6 +1,5 @@
 .section-advantage {
     padding: 24px 0;
-    /* era sem padding, agora com respiro menor */
     height: 100%;
     box-sizing: border-box;
 }
@@ -272,25 +271,62 @@
     color: var(--color-dark-blue) !important;
 }
 
-.card-left button {
+
+
+.btn-meat {
     position: relative;
     top: 10px;
     width: 180px;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 4px 4px;
     border-radius: 300px;
     font-size: 14px;
     font-family: var(--font-inter);
     background: #CAD0D0;
     font-weight: 600;
+    overflow: hidden;
 
     align-items: center;
     gap: 8px;
     cursor: pointer;
+
+
+    z-index: 30;
+    color: var(--color-dark-blue);
+
+    transition: all 0.7s ease;
+    text-shadow: 3px 5px 2px var(--color-light-blue);
 }
 
-.card-left button img {
+
+.btn-meat::after {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 4px;
+    background: var(--color-light-blue);
+    color: var(--color-gray);
+    left: 20px;
+    bottom: 0;
+    transform: translateY(100%);
+    border-radius: 6px;
+    z-index: -20;
+    transition: all 0.7s ease;
+}
+
+/* efeito hover */
+.btn-meat:hover::after {
+    transform: translateY(0) scale(300);
+}
+
+.btn-meat:hover {
+    color: white;
+    text-shadow: 2px 2px 2px var(--color-dark-blue);
+}
+
+.btn-meat img {
     width: 28px;
     height: 32px;
 }
@@ -307,7 +343,7 @@
     border-radius: 20px;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    
+
 }
 
 .container-calories {
@@ -378,6 +414,7 @@
 
     scale: 1.5;
 }
+
 
 
 

@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Footer() {
     return (
-        <section>
+        <section className="section-footer">
             <InfiniteScroll />
             <div className="container-date">
                 <Date number="01" title="fitup wellness expo" time="full-day event 01.05.2026 (hamida stadium)" />
