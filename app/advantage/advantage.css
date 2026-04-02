@@ -2,6 +2,7 @@
     padding: 24px 0;
     height: 100%;
     box-sizing: border-box;
+    
 }
 
 .advante-container {
@@ -164,7 +165,7 @@
     line-height: 1.15;
     margin: 0;
     font-weight: 800;
-    color: var(--color-dark-blue);
+    color: var(--color-white);
 }
 
 .container-left h1 span {
@@ -173,8 +174,8 @@
 
 .paragraph-info {
     line-height: 1.65;
-    color: var(--color-black);
-    opacity: 0.75;
+    color: var(--color-gray);
+    opacity: 0.70;
     font-family: var(--font-inter);
 }
 

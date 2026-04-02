@@ -25,7 +25,7 @@ export default function Yoga() {
             }
         });
 
-        // título
+        
         SplitText.create(".title-yoga h2", {
             type: "chars",
             onSplit(self) {
@@ -40,7 +40,7 @@ export default function Yoga() {
             },
         });
 
-        // parágrafo
+        
         SplitText.create(".title-yoga p", {
             type: "words",
             onSplit(self) {
@@ -55,7 +55,7 @@ export default function Yoga() {
             },
         });
 
-        // cards yoga
+       
         tl.from(".container-yoga > *", {
             y: 80,
             opacity: 0,
@@ -65,7 +65,7 @@ export default function Yoga() {
             ease: "power3.out",
         })
 
-        // botão final
+        
         .from(".button-yoga", {
             y: 60,
             opacity: 0,

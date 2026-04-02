@@ -2,20 +2,20 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 
 import Advantage from "./advantage/Advantage";
 import Hero from "./hero/Hero";
 import Yoga from "./yoga/Yoga";
 import Footer from "./footer/Footer";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function Home() {
-  const containerRef  = useRef<HTMLDivElement>(null);
-  const advantageRef  = useRef<HTMLDivElement>(null);
-  const yogaRef       = useRef<HTMLDivElement>(null);
-  const footerRef     = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const advantageRef = useRef<HTMLDivElement>(null);
+  const yogaRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -64,7 +64,9 @@ export default function Home() {
   return (
     <main ref={containerRef} className="scroll-container">
       <div className="sticky-viewport">
-
+        <video autoPlay loop muted playsInline className="video-bg">
+          <source src="/Background.mp4" type="video/mp4" />
+        </video>
         <div className="panel panel-hero">
           <Hero />
         </div>

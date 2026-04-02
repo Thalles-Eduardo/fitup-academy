@@ -6,11 +6,11 @@
 }
 
 .title-yoga h2 {
-    width: 800px;
+    width: 530px;
     font-family: var(--font-inter);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: bold;
-    color: var(--color-dark-blue);
+    color: var(--color-white);
 }
 
 .title-yoga h2 span {
@@ -47,11 +47,12 @@
     font-size: 18px;
     color: white;
     background: var(--color-dark-blue);
-    margin-top: 2rem;
+    
     --color: var(--color-light-blue);
     border: 2px solid var(--color-light-blue);
     color: white;
     position: relative;
+    top: 2rem;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     z-index: 1;
@@ -81,14 +82,12 @@
     left: calc(100% + 1em);
 }
 
-/* animação hover */
 .button-yoga:hover::before,
 .button-yoga:hover::after {
     width: 420px;
     height: 420px;
 }
 
-/* efeito hover mantendo suas cores */
 .button-yoga:hover {
     background: linear-gradient(135deg,
             var(--color-dark-blue),
@@ -97,7 +96,6 @@
     transform: translateY(-3px);
 }
 
-/* clique */
 .button-yoga:active {
     transform: scale(0.97);
     filter: brightness(0.9);

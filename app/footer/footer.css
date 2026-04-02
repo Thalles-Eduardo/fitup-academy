@@ -1,33 +1,37 @@
 .section-footer {
     position: relative;
     height: 120vh;
+    perspective: 1200px;
 }
+
 
 .container-date {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-
 }
 
 footer {
+    position: absolute;
+    transform-style: preserve-3d;
+    bottom: 8.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
     z-index: 10;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    width: 100rem;
 }
 
-h1 {
+footer img {
+    will-change: transform;
+}
+
+footer h1 {
+    text-align: center;
     font-size: 300px;
     font-family: var(--font-gorditas);
+    will-change: transform;
+    line-height: 0.8;
+    
 }
-
-
-

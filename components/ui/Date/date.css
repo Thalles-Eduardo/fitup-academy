@@ -28,13 +28,9 @@
     font-family: var(--font-inter);
     font-weight: bold;
     font-size: clamp(0.75rem, 2.5vw, 0.75rem);
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.7);
 }
 
-.button-date {
-    padding: 14px 48px;
-    font-size: clamp(0.75rem, 2.5vw, 0.75rem);
-    border-radius: 333px;
-    color: var(--color-light-blue);
-    border: 1px solid var(--color-dark-blue);
+.date button {
+    font-size: 14px;
 }
