@@ -2,14 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger, ScrollSmoother } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Advantage from "./advantage/Advantage";
 import Hero from "./hero/Hero";
 import Yoga from "./yoga/Yoga";
 import Footer from "./footer/Footer";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,10 +23,10 @@ export default function Home() {
       // Advantage — entra da esquerda
       gsap.set(advantageRef.current, { xPercent: -100, zIndex: 2 });
       ScrollTrigger.create({
-        trigger: containerRef.current,
+        trigger: ".scroll-container",
         start: "top top",
         end: "25% top",
-        scrub: 1,
+        scrub: 2,
         onUpdate: (self) => {
           gsap.set(advantageRef.current, { xPercent: -100 + self.progress * 100 });
         },
@@ -35,10 +35,10 @@ export default function Home() {
       // Yoga — entra da direita
       gsap.set(yogaRef.current, { xPercent: 100, zIndex: 3 });
       ScrollTrigger.create({
-        trigger: containerRef.current,
+        trigger: ".scroll-container",
         start: "25% top",
         end: "50% top",
-        scrub: 1,
+        scrub: 2,
         onUpdate: (self) => {
           gsap.set(yogaRef.current, { xPercent: 100 - self.progress * 100 });
         },
@@ -47,10 +47,10 @@ export default function Home() {
       // Footer — entra de baixo
       gsap.set(footerRef.current, { yPercent: 100, zIndex: 4 });
       ScrollTrigger.create({
-        trigger: containerRef.current,
+        trigger: ".scroll-container",
         start: "50% top",
         end: "75% top",
-        scrub: 1,
+        scrub: 2,
         onUpdate: (self) => {
           gsap.set(footerRef.current, { yPercent: 100 - self.progress * 100 });
         },

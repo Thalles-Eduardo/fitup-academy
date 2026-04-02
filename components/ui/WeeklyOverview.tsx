@@ -48,7 +48,7 @@ export default function WeeklyOverview() {
       ref={containerRef}
       className="weekly-overview"
       style={{
-        position: "relative", 
+        position: "relative",
         display: "inline-flex",
         flexDirection: "column",
         alignItems: "center",
@@ -63,11 +63,11 @@ export default function WeeklyOverview() {
       }}
     >
       {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: 24 }}>
-        <div style={{ fontSize: 18, fontWeight: 700 }}>
+      <div style={{ textAlign: "center", marginBottom: 24, }}>
+        <div className="title-week" style={{ fontSize: 18, fontWeight: 700 }}>
           Weekly Overview
         </div>
-        <div style={{ fontSize: 12, color: "#999" }}>
+        <div className="sub-week" style={{ fontSize: 12, color: "#999" }}>
           All week
         </div>
       </div>
@@ -88,12 +88,13 @@ export default function WeeklyOverview() {
 
           return (
             <div
+              className="days-week"
               key={i}
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                gap: 6,
+                gap: 10,
                 cursor: "pointer",
                 position: "relative",
               }}
@@ -101,7 +102,7 @@ export default function WeeklyOverview() {
               onMouseLeave={() => setHovered(null)}
             >
               {isActive && (
-                <div style={{ position: "absolute", top: -22, fontSize: 9 }}>
+                <div className="top" style={{ position: "absolute", top: -22, fontSize: 9 }}>
                   TOP
                 </div>
               )}
@@ -115,8 +116,8 @@ export default function WeeklyOverview() {
                   background: isActive
                     ? "#2e2e2e"
                     : isHovered
-                    ? "#b5b0a8"
-                    : "#cdc9c2",
+                      ? "#b5b0a8"
+                      : "#cdc9c2",
                   transition: "background 0.2s ease, transform 0.15s ease",
                   transform: isHovered ? "scaleY(1.04)" : "scaleY(1)",
                   transformOrigin: "bottom",
@@ -129,7 +130,7 @@ export default function WeeklyOverview() {
       </div>
 
       {/* Labels */}
-      <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+      <div className="letter-week" style={{ display: "flex", gap: 8, marginTop: 10 }}>
         {data.map((item, i) => (
           <div key={i} style={{ width: 22, textAlign: "center", fontSize: 11 }}>
             {item.day}
@@ -138,9 +139,10 @@ export default function WeeklyOverview() {
       </div>
 
       {/* Footer */}
-      <div style={{ marginTop: 20, fontSize: 10 }}>
+      <div className="perfomace" style={{ marginTop: 20, fontSize: 10 }}>
         Your Performance *
       </div>
     </div>
   );
 }
+

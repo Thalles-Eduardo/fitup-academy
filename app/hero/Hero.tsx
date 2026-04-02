@@ -4,7 +4,8 @@ import Image from "next/image";
 import "./hero.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText, Flip, ScrollTrigger } from "gsap/all";
+import { SplitText, Flip } from "gsap/all";
+import { useState } from "react";
 
 import WeeklyOverview from "@/components/ui/WeeklyOverview";
 import { Separator } from "@/components/ui/Separator";
@@ -13,6 +14,8 @@ import { Separator } from "@/components/ui/Separator";
 gsap.registerPlugin(SplitText, Flip);
 
 export default function Hero() {
+
+    const [isOpen, setIsOpen] = useState(false);
 
     useGSAP(() => {
 
@@ -79,7 +82,7 @@ export default function Hero() {
             repeat: -1,
             duration: 1.5,
             ease: "sine.inOut",
-            
+
         })
 
 
@@ -98,9 +101,9 @@ export default function Hero() {
                 opacity: 0,
                 autoAlpha: 0,
                 duration: 0.7,
-                
+
             }, "<0.3")
-            
+
             .from(".right-hero .star-right", {
                 rotation: -45,
                 opacity: 0,
@@ -116,6 +119,16 @@ export default function Hero() {
     return (
         <section>
             <nav>
+                <button
+                    className={`menu ${isOpen ? "active" : ""}`}
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    <svg viewBox="0 0 64 48">
+                        <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+                        <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+                        <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+                    </svg>
+                </button>
                 <div className="left-container">
                     <Image
                         src="/images/Logo.png"
@@ -149,6 +162,19 @@ export default function Hero() {
                     </button>
                 </div>
             </nav>
+
+
+            <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
+                <a href="#about">HOW IT WORKS</a>
+                <a href="#courses">ABOUT</a>
+                <a href="#contact">START</a>
+                <a href="#contact">FAQ</a>
+                <a href="#contact">EVENTS</a>
+
+                <button className="contact-btn mobile">
+                    CONTACT US
+                </button>
+            </div>
 
 
             <div className="container-hero">
