@@ -23,7 +23,7 @@ export default function Home() {
       // Advantage — entra da esquerda
       gsap.set(advantageRef.current, { xPercent: -100, zIndex: 2 });
       ScrollTrigger.create({
-        trigger: ".scroll-container",
+        trigger: ".panel",
         start: "top top",
         end: "25% top",
         scrub: 2,
@@ -68,7 +68,7 @@ export default function Home() {
           <source src="/Background.mp4" type="video/mp4" />
         </video>
         <div className="panel panel-hero">
-          <Hero />
+          <Hero/>
         </div>
 
         <div ref={advantageRef} className="panel panel-advantage">

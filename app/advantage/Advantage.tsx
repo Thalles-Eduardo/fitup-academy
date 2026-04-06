@@ -2,6 +2,7 @@
 
 import "./advantage.css";
 import Image from "next/image";
+import { useState } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -11,8 +12,37 @@ import { useRef } from "react";
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function Advantage() {
+    const [index, setIndex] = useState(0);
+    const [clicked, setClicked] = useState(false);
 
     const sectionRef = useRef(null);
+
+    const photos = [
+        {
+            className: "liver",
+            src: "/images/Liver.png",
+            alt: "Liver"
+        },
+        {
+            className: "heart",
+            src: "/images/Heart.png",
+            alt: "Heart"
+        },
+        {
+            className: "cells",
+            src: "/images/Cells.png",
+            alt: "Cells"
+        }
+    ]
+
+    const next = () => {
+        setIndex((prev) => (prev + 1) % photos.length)
+    }
+
+    const prev = () => {
+        setIndex((prev) => (prev - 1 + photos.length) % photos.length)
+    }
+
 
     useGSAP(() => {
 
@@ -65,33 +95,33 @@ export default function Advantage() {
             ease: "power3.out",
         })
 
-        // cards
-        .from(".card-left, .card-right", {
-            y: 50,
-            opacity: 0,
-            autoAlpha: 0,
-            duration: 0.7,
-            stagger: 0.25,
-            ease: "power3.out",
-        })
+            // cards
+            .from(".card-left, .card-right", {
+                y: 50,
+                opacity: 0,
+                autoAlpha: 0,
+                duration: 0.7,
+                stagger: 0.25,
+                ease: "power3.out",
+            })
 
-        // card calorias
-        .from(".container-calories", {
-            y: 60,
-            opacity: 0,
-            autoAlpha: 0,
-            duration: 0.8,
-            ease: "power3.out",
-        })
+            // card calorias
+            .from(".container-calories", {
+                y: 60,
+                opacity: 0,
+                autoAlpha: 0,
+                duration: 0.8,
+                ease: "power3.out",
+            })
 
-        // imagem comida
-        .from(".img-calories", {
-            x: 80,
-            opacity: 0,
-            autoAlpha: 0,
-            duration: 1,
-            ease: "power3.out",
-        });
+            // imagem comida
+            .from(".img-calories", {
+                x: 80,
+                opacity: 0,
+                autoAlpha: 0,
+                duration: 1,
+                ease: "power3.out",
+            });
 
     }, []);
 
@@ -120,55 +150,57 @@ export default function Advantage() {
 
                     <div className="container-galeria">
 
-                        <div className="container-image">
-                            <Image
-                                className="image"
-                                src="/images/Liver.png"
-                                alt="Liver"
-                                width={208}
-                                height={141}
-                            />
-                            <button>
-                                <span>healthy liver</span>
-                                <Image src="/images/Near.png" alt="Near" width={28} height={28} />
-                            </button>
-                        </div>
+                        <a className={`arrow arrow-left ${clicked ? "active" : ""}`}
+                            onClick={() => {
+                                setClicked(true);
+                                prev();
 
-                        <div className="container-image">
+                                setTimeout(() => setClicked(false), 400);
+                            }}>
+                            <Image className="image-arrow" src="/images/Arrow.png" alt="Left Arrow" width={24} height={24}></Image>
+                        </a>
+
+                        <div className={`container-image ${photos[index].className}`}>
+
+                            <div className="stars"></div>
+                            <div className="shooting-star"></div>
+                            <div className="shooting-star"></div>
+                            <div className="shooting-star"></div>
+                            <div className="shooting-star"></div>
+                            <div className="shooting-star"></div>
+
+
                             <Image
                                 className="image"
-                                src="/images/Heart.png"
-                                alt="Heart"
+                                src={photos[index].src}
+                                alt={photos[index].alt}
                                 width={93}
                                 height={146}
                             />
-                            <button>
-                                <span>healthy heart</span>
-                                <Image src="/images/Near.png" alt="Near" width={28} height={28} />
-                            </button>
                         </div>
 
-                        <div className="container-image">
-                            <Image
-                                className="image"
-                                src="/images/Cells.png"
-                                alt="Cells"
-                                width={179}
-                                height={92}
-                            />
-                            <button>
-                                <span>healthy cells</span>
-                                <Image src="/images/Near.png" alt="Near" width={28} height={28} />
-                            </button>
-                        </div>
+                        <a className={`arrow arrow-right ${clicked ? "active" : ""}`}
+                            onClick={() => {
+                                setClicked(true);
+                                next();
+
+                                setTimeout(() => setClicked(false), 400);
+                            }}>
+                            <Image className="image-arrow" src="/images/Arrow.png" alt="Left Arrow" width={24} height={24}></Image>
+
+                        </a>
 
                     </div>
+
                 </div>
             </div>
 
 
             {/* seção dieta */}
 
+        <div>
+            
+        </div>
             <div className="dieta">
 
                 <div className="container-left">
@@ -185,9 +217,8 @@ export default function Advantage() {
                     </p>
 
                     <div className="card-container">
-
                         <div className="card-left">
-                            <div>
+                            <div className="no-vegan">
                                 <div className="icon-image">
                                     <Image
                                         className="ham"
@@ -217,7 +248,7 @@ export default function Advantage() {
                         </div>
 
                         <div className="card-right">
-                            <div>
+                            <div className="vegan">
                                 <div className="icon-image">
                                     <Image
                                         src="/images/Vegan.png"
@@ -235,7 +266,6 @@ export default function Advantage() {
 
 
                 <div className="container-right">
-
                     <div className="container-calories">
                         <div className="title-calories">
                             <h4>Calories</h4>

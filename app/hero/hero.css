@@ -23,47 +23,6 @@ nav {
     color: var(--color-dark-blue);
 }
 
-.mid-container ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-.mid-container ul li a {
-    text-decoration: none;
-    color: var(--color-black);
-    opacity: 0.75;
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 4px;
-}
-
-
-.mid-container ul li a::before {
-    content: "";
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: currentColor;
-
-    transform: scale3d(0, 1, 1);
-    transform-origin: right;
-    transition: transform 0.4s ease;
-}
-
-
-.mid-container ul li a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-
-.mid-container ul li a:hover {
-    opacity: 1;
-}
-
 
 .contact-btn {
     display: flex;
@@ -369,154 +328,13 @@ nav {
     opacity: 1;
 }
 
-.menu {
-    --color: var(--color-dark-blue);
-    width: 36px;
-    height: 36px;
-    position: relative;
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: none;
-    /* escondido no desktop */
-}
 
-.menu svg {
-    width: 64px;
-    height: 48px;
-    position: absolute;
-    top: -6px;
-    left: -14px;
-    stroke: var(--color);
-    stroke-width: 4px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-}
 
-.menu svg path {
-    transition: stroke-dasharray .85s ease, stroke-dashoffset .85s ease;
-    stroke-dasharray: 26px 100px;
-    stroke-dashoffset: 126px;
-}
 
-.menu svg path:nth-child(2) {
-    stroke-dashoffset: 100px;
-    stroke-dasharray: 26px 74px;
-}
 
-.menu svg path:nth-child(3) {
-    stroke-dashoffset: 133px;
-    stroke-dasharray: 26px 107px;
-}
 
-.menu.active svg path {
-    stroke-dashoffset: 57px;
-}
 
-.menu.active svg path:nth-child(2) {
-    stroke-dashoffset: 2px;
-    stroke-dasharray: 1px 74px;
-}
 
-.menu.active svg path:nth-child(3) {
-    stroke-dashoffset: 58px;
-}
-
-.mobile-menu {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: white;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-    padding: 20px;
-
-    transform: translateY(-120%);
-    opacity: 0;
-    pointer-events: none;
-
-    transition: all 0.4s ease;
-    z-index: 999;
-}
-
-.mobile-menu.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all;
-}
-
-.mobile-menu a {
-    text-decoration: none;
-    color: var(--color-black);
-    opacity: 0.75;
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 4px;
-}
-
-/* linha animada */
-.mobile-menu a::before {
-    content: "";
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: currentColor;
-
-    transform: scale3d(0, 1, 1);
-    transform-origin: right;
-    transition: transform 0.4s ease;
-}
-
-/* hover (tablet/desktop pequeno) */
-.mobile-menu a:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* toque (mobile real) */
-.mobile-menu a:active::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* efeito de opacidade */
-.mobile-menu a:hover,
-.mobile-menu a:active {
-    opacity: 1;
-}
-
-.mobile-menu a {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-.mobile-menu.open a {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.4s ease;
-}
-
-/* delay progressivo */
-.mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
-.mobile-menu.open a:nth-child(2) { transition-delay: 0.2s; }
-.mobile-menu.open a:nth-child(3) { transition-delay: 0.3s; }
-.mobile-menu.open a:nth-child(4) { transition-delay: 0.4s; }
-.mobile-menu.open a:nth-child(5) { transition-delay: 0.5s; }
-
-.mobile-menu.open .contact-btn {
-    opacity: 0;
-    transform: translateY(-10px);
-    animation: fadeBtn 0.4s ease forwards;
-    animation-delay: 0.6s;
-}
 
 @keyframes fadeBtn {
     to {
@@ -541,33 +359,16 @@ nav {
 
     nav {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
-    .mid-container,
-    .right-container {
-        display: none;
-    }
-
-    .menu {
-        display: block;
-        order: 3;
-    }
-
-    .left-container {
-        order: 1;
-    }
-
-
-
-    .mid-container ul {
-        justify-content: center;
-    }
-
+  
     .contact-btn {
         width: 100%;
+        height: 70%;
         justify-content: center;
+        font-size: 10px;
     }
 
 

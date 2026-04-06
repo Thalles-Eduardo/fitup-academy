@@ -9,6 +9,7 @@ import { useState } from "react";
 
 import WeeklyOverview from "@/components/ui/WeeklyOverview";
 import { Separator } from "@/components/ui/Separator";
+import Link from "next/link";
 
 
 gsap.registerPlugin(SplitText, Flip);
@@ -119,16 +120,6 @@ export default function Hero() {
     return (
         <section>
             <nav>
-                <button
-                    className={`menu ${isOpen ? "active" : ""}`}
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <svg viewBox="0 0 64 48">
-                        <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
-                        <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
-                        <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
-                    </svg>
-                </button>
                 <div className="left-container">
                     <Image
                         src="/images/Logo.png"
@@ -139,16 +130,6 @@ export default function Hero() {
                     <h1>FitUp</h1>
                 </div>
 
-
-                <div className="mid-container">
-                    <ul>
-                        <li><a href="#about">HOW IT WORKS</a></li>
-                        <li><a href="#courses">ABOUT</a></li>
-                        <li><a href="#contact">START</a></li>
-                        <li><a href="#contact">FAQ</a></li>
-                        <li><a href="#contact">EVENTS</a></li>
-                    </ul>
-                </div>
 
                 <div className="right-container">
                     <button className="contact-btn">
@@ -162,19 +143,6 @@ export default function Hero() {
                     </button>
                 </div>
             </nav>
-
-
-            <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-                <a href="#about">HOW IT WORKS</a>
-                <a href="#courses">ABOUT</a>
-                <a href="#contact">START</a>
-                <a href="#contact">FAQ</a>
-                <a href="#contact">EVENTS</a>
-
-                <button className="contact-btn mobile">
-                    CONTACT US
-                </button>
-            </div>
 
 
             <div className="container-hero">

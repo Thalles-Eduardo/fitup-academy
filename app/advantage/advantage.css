@@ -1,8 +1,8 @@
 .section-advantage {
     padding: 24px 0;
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
-    
+
 }
 
 .advante-container {
@@ -418,27 +418,381 @@
 
 
 
+@media (max-width: 600px) {
 
-@media (max-width: 980px) {
-
-    .advante-container,
-    section>.container {
-        flex-direction: column;
-        display: flex;
+    /* ADVANTAGE TOP */
+    .section-advantage {
+        padding: 16px 0;
     }
 
     .advante-container {
-        height: auto;
-        padding: 20px;
+        border-radius: 24px;
+        padding: 16px;
+        gap: 12px;
     }
 
-    .advante-container .legs,
-    .advante-container .info {
+    .legs {
+        width: 300px;
+        height: 320px;
+        top: 1.8rem;
+        right: 4rem;
+    }
+
+    .info {
+        position: relative;
+        right: 8rem;
+    }
+
+    .info h2 {
+        font-size: 8px;
+        padding: 6px 12px;
+    }
+
+    .info p {
+        width: 75%;
+        font-size: 9px;
+    }
+
+    .container-galeria {
+        width: 200px;
+        display: flex;
+        align-items: center;
+    }
+
+    .container-image {
+        animation: fade 0.4s ease;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background-color: black;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    }
+
+    .container-image .image {
+        z-index: 10;
+    }
+
+    .liver img {
+        position: relative;
+        top: -5px !important;
+        transform: scale(1.2);
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+
+    .stars {
+        position: absolute;
+        inset: 0;
+        /* ocupa só o container */
+        width: 1px;
+        height: 1px;
+        background: white;
+        z-index: 0;
+
+        box-shadow:
+            2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+            22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+            38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+            53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white;
+
+        animation: twinkle 8s infinite linear;
+    }
+
+    .stars::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 1px;
+        height: 1px;
+        background: white;
+
+        box-shadow:
+            8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+            33vw 15vh 1px white, 41vw 28vh 2px white;
+
+        animation: twinkle 6s infinite linear reverse;
+    }
+
+    .shooting-star {
+        position: absolute;
+        width: 60px;
+        /* 👈 menor pra caber */
+        height: 2px;
+        background: linear-gradient(90deg, white, transparent);
+        animation: shoot 3s infinite ease-in;
+        z-index: 1;
+    }
+
+    /* posições adaptadas pro container pequeno */
+    .shooting-star:nth-child(2) {
+        top: 20%;
+        left: -50px;
+        animation-delay: 0s;
+    }
+
+    .shooting-star:nth-child(3) {
+        top: 40%;
+        left: -50px;
+        animation-delay: 1s;
+    }
+
+    .shooting-star:nth-child(4) {
+        top: 60%;
+        left: -50px;
+        animation-delay: 2s;
+    }
+
+    .shooting-star:nth-child(5) {
+        top: 30%;
+        left: -50px;
+        animation-delay: 1.5s;
+    }
+
+    .shooting-star:nth-child(6) {
+        top: 70%;
+        left: -50px;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes twinkle {
+
+        0%,
+        100% {
+            opacity: 0.8;
+        }
+
+        50% {
+            opacity: 0.4;
+        }
+    }
+
+    @keyframes shoot {
+        0% {
+            transform: translateX(0) translateY(0) rotate(25deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(200px) translateY(80px) rotate(25deg);
+            opacity: 0;
+        }
+    }
+
+    .heart-img {
+        position: relative;
+        top: -2px !important;
+        z-index: 2;
+    }
+
+
+    .arrow {
+        height: 40px;
+        width: 40px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    /* borda base */
+    .arrow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid black;
+        transition: all 0.4s ease;
+    }
+
+    /* camada animada */
+    .arrow::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid #666;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+    }
+
+    /* HOVER */
+    .arrow:hover::after {
+        transform: translateY(0);
+    }
+
+    /* ACTIVE (mobile + React) */
+    .arrow.active::after {
+        transform: translateY(0);
+    }
+
+    .arrow-left {
+        align-content: center;
+        transform: rotate(90deg);
+    }
+
+    .image-arrow {
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        display: block;
+        scale: 0.9;
+    }
+
+    .arrow-right {
+        align-content: center;
+        transform: rotate(90deg);
+    }
+
+    .arrow-right .image-arrow {
+        transform: rotate(-90deg);
+    }
+
+    .arrow-left .image-arrow {
+        transform: rotate(90deg);
+    }
+
+    .arrow-slide {
+        left: 0;
+        top: -100%;
         width: 100%;
-        min-width: auto;
+        height: 100%;
+        background: var(--color-dark-blue);
+        position: absolute;
+        display: block;
+        z-index: 0;
     }
 
-    section>.container {
+
+
+
+
+    /* DIETA SECTION */
+    .dieta {
+        display: grid;
         grid-template-columns: 1fr;
+        margin-top: 6rem;
+
+    }
+
+    .container-left {
+        width: 100%;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .container-left h1 {
+        font-size: 28px;
+    }
+
+    .paragraph-info {
+        font-size: 12px;
+    }
+
+    .card-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    .card-left {
+        height: 150px;
+    }
+
+    .card-right {
+        top: 75px;
+        height: 75px;
+    }
+
+    .card-left,
+    .card-right {
+        width: 50%;
+    }
+
+
+    .card-left p,
+    .card-right p {
+        font-size: 12px;
+    }
+
+    .card-left .no-vegan,
+    .card-right .vegan {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .icon-image {
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon-image img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-meat {
+        
+        width: 160px;
+        font-size: 12px;
+    }
+
+    .btn-meat img {
+        width: 20px;
+        height: 24px;
+    }
+
+    /* CONTAINER RIGHT */
+    .container-right {
+        margin-top: 2.5rem !important;
+        margin: 0 auto;
+        width: 95%;
+        height: 70%;
+    }
+
+    .container-calories {
+        position: relative;
+        left: 20%;
+        width: 100%;
+        height: auto;
+        max-width: 250px;
+        z-index: 1;
+    }
+
+    .title-calories {
+        font-size: 11px;
+    }
+
+    .title-calories p span {
+        font-size: 7px;
+    }
+
+    .progress-bar {
+        height: 10px;
+    }
+
+    .sub-title {
+        font-size: 10px;
+    }
+
+    .img-calories {
+        position: relative;
+        bottom: 3rem;
+        right:3.6rem;
+        width: 96px;
+        scale: 2 !important;
+        transform: rotate(90deg);
+        z-index: 0;
     }
 }
