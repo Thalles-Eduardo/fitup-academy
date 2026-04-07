@@ -31,6 +31,44 @@
     color: rgba(0, 0, 0, 0.7);
 }
 
-.date button {
+.get-started-btn {
     font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .date {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        position: relative;
+        padding-right: 9rem;
+    }
+
+    .title-date {
+        gap: 0.5rem;
+    }
+
+    .title-date p {
+        font-size: 1rem;
+        min-width: unset;
+    }
+
+    .title-date h2 {
+        width: 100%;
+        font-size: 1.125rem;
+    }
+
+    .time {
+        width: 100%;
+        font-size: 0.7rem;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .get-started-btn {
+        font-size: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }

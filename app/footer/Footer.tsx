@@ -62,7 +62,7 @@ export default function Footer() {
             }
         });
 
-        
+
         const move = (e: MouseEvent) => {
             const rect = section!.getBoundingClientRect();
 
@@ -75,7 +75,7 @@ export default function Footer() {
             const deltaX = (x - centerX) / centerX;
             const deltaY = (y - centerY) / centerY;
 
-            
+
             gsap.to("footer h1", {
                 x: deltaX * 40,
                 y: deltaY * 40,
@@ -87,7 +87,7 @@ export default function Footer() {
                 duration: 0.6
             });
 
-            
+
             gsap.to("footer img", {
                 x: deltaX * 25,
                 y: deltaY * 25,
@@ -97,8 +97,8 @@ export default function Footer() {
                 duration: 0.6
             });
 
-            
-           
+
+
         };
 
         const leave = () => {
@@ -131,10 +131,10 @@ export default function Footer() {
             <InfiniteScroll />
 
             <div className="container-date">
-                <Date number="01" title="fitup wellness expo" time="full-day event 01.05.2026 (hamida stadium)" />
-                <Date number="02" title="mind balance retreat" time="full-day event 01.05.2026 (hamida stadium)" />
-                <Date number="03" title="training workshop" time="full-day event 01.05.2026 (hamida stadium)" />
-                <Date number="04" title="meal planning seminar" time="full-day event 01.05.2026 (hamida stadium)" />
+                <Date number="01" title="Fitup wellness expo" time="full-day event 01.05.2026 (hamida stadium)" />
+                <Date number="02" title="Mind balance retreat" time="full-day event 01.05.2026 (hamida stadium)" />
+                <Date number="03" title="Training workshop" time="full-day event 01.05.2026 (hamida stadium)" />
+                <Date number="04" title="Meal planning seminar" time="full-day event 01.05.2026 (hamida stadium)" />
             </div>
 
             <footer>
@@ -147,6 +147,26 @@ export default function Footer() {
                 <h1>FitUp</h1>
             </footer>
 
-        </section>
+
+            <div className="scroll-up-wrapper">
+                <a
+                    className="scroll-up"
+                    //onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                >
+                    <span className="left-bar"></span>
+                    <span className="right-bar"></span>
+
+                    <svg width="40" height="40">
+                        <line className="top" x1="0" y1="0" x2="120" y2="0" />
+                        <line className="left" x1="0" y1="40" x2="0" y2="-80" />
+                        <line className="bottom" x1="40" y1="40" x2="-80" y2="40" />
+                        <line className="right" x1="40" y1="0" x2="40" y2="1200" />
+                    </svg>
+                </a>
+
+                <span className="scroll-text">Click Me</span>
+            </div>
+
+        </section >
     );
 }

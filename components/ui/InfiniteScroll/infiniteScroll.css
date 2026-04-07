@@ -5,7 +5,7 @@
 }
 
 .item {
-  
+
     width: 100px;
     height: 100px;
     display: flex;
@@ -23,12 +23,13 @@
     animation: scroll 20s linear infinite;
 }
 
-.carousel-track img{
+.carousel-track img {
     position: relative;
     top: 1rem;
     width: 76px;
     height: 70.5px;
 }
+
 .carousel-track h2 {
     font-family: var(--font-inter);
     font-size: clamp(1.5rem, 2.5vw, 3.5rem);
@@ -41,7 +42,31 @@
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .carousel-container {
+        padding: 10px 0;
+    }
+
+    .carousel-track {
+        align-items: center;
+        justify-items: center;
+        gap: 3rem;
+    }
+
+    .carousel-track img {
+        width: 60px;
+        height: 60px;
+        top: 0.5rem;
+    }
+
+    .carousel-track h2 {
+        font-size: 2rem;
     }
 }

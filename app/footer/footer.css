@@ -21,6 +21,7 @@ footer {
     align-items: center;
     z-index: 10;
     width: 100rem;
+    
 }
 
 footer img {
@@ -33,5 +34,132 @@ footer h1 {
     font-family: var(--font-gorditas);
     will-change: transform;
     line-height: 0.8;
-    
+
+}
+
+.scroll-up-wrapper {
+    display: none;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .container-date {
+        gap: 2rem;
+    }
+
+    footer {
+        position: relative;
+        top: 2rem;
+        width: 95%;
+        height: 200px;
+    }
+
+    footer h1 {
+        font-size: 80px;
+    }
+
+    footer img {
+        width: 180px;
+        height: auto;
+    }
+
+    .scroll-up-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5rem;
+        gap: 0.5rem;
+    }
+
+    .scroll-text {
+        font-size: 12px;
+        color: white;
+        letter-spacing: 1px;
+    }
+
+    .scroll-up {
+        height: 40px;
+        width: 40px;
+        display: block;
+        outline: 1px solid white;
+        
+        position: relative;
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+    }
+
+    .scroll-up svg line {
+        stroke-width: 3;
+        stroke: black;
+        fill: none;
+        stroke-dasharray: 20;
+        transition: all .4s ease;
+    }
+
+    /* Hover animações */
+    .scroll-up:hover svg .top {
+        transform: translateX(-40px);
+    }
+
+    .scroll-up:hover svg .bottom {
+        transform: translateX(40px);
+    }
+
+    .scroll-up:hover svg .left {
+        transform: translateY(40px);
+    }
+
+    .scroll-up:hover svg .right {
+        transform: translateY(-40px);
+    }
+
+    /* Barrinhas */
+    .left-bar,
+    .right-bar {
+        position: absolute;
+        z-index: 1;
+        background-color: transparent;
+        width: 18px;
+        display: block;
+    }
+
+    .left-bar {
+        top: 19px;
+        left: 5px;
+        transform: rotate(-45deg);
+    }
+
+    .right-bar {
+        top: 19px;
+        left: 17px;
+        transform: rotate(45deg);
+    }
+
+    .left-bar::after,
+    .right-bar::after {
+        content: "";
+        background-color: var(--color-dark-blue);
+        width: 18px;
+        height: 1px;
+        display: block;
+        border-radius: 1px;
+        transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
+    }
+
+    .left-bar::after {
+        transform-origin: right center;
+    }
+
+    .right-bar::after {
+        transform-origin: left center;
+    }
+
+    .scroll-up:hover .left-bar::after {
+        transform: rotate(-10deg);
+    }
+
+    .scroll-up:hover .right-bar::after {
+        transform: rotate(10deg);
+    }
 }
