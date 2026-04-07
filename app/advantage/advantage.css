@@ -460,13 +460,9 @@
     }
 
     .container-image {
-        animation: fade 0.4s ease;
+        background-color: transparent;
         display: flex;
         justify-content: center;
-        position: relative;
-        overflow: hidden;
-        background-color: black;
-        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     }
 
     .container-image .image {
@@ -791,7 +787,6 @@
         bottom: 3rem;
         right:3.6rem;
         width: 96px;
-        scale: 2 !important;
         transform: rotate(90deg);
         z-index: 0;
     }

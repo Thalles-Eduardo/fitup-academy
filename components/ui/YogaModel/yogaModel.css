@@ -125,3 +125,29 @@
 .btn-yoga-bubbles:active {
     transform: scale(0.98);
 }
+
+
+
+@media (max-width: 600px) {
+
+    .yoga-model {
+        width: 200px;
+        height: 200px;
+        padding: 1rem;
+    }
+
+    .yoga-model h1 {
+        font-size: 48px;
+    }
+
+    .btn-yoga-bubbles {
+        width: 150px;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .position {
+        bottom: var(--mobile-bottom) !important;
+        transform: translateX(-50%) scale(var(--mobile-scale, 0.4)) !important;
+    }
+}

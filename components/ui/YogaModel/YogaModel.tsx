@@ -9,6 +9,8 @@ type Props = {
     bottom?: string
     left?: string
     scale?: number
+    scaleMobile?: number
+    bottomMobile?: string
 }
 
 export default function YogaModel({
@@ -18,10 +20,17 @@ export default function YogaModel({
     height,
     bottom = "2rem",
     left = "50%",
-    scale = 0.5
+    scale = 0.5,
+    scaleMobile,
+    bottomMobile,
 }: Props) {
     return (
-        <div className="yoga-model">
+        <div className="yoga-model" style={
+            {
+                "--mobile-scale": scaleMobile,
+                "--mobile-bottom": bottomMobile,
+            } as React.CSSProperties
+        }>
             <h1>YOGA</h1>
 
             <Image
@@ -33,7 +42,7 @@ export default function YogaModel({
                 style={{
                     bottom: bottom,
                     left: left,
-                    transform: `translateX(-50%) scale(${scale})`
+                    transform: `translateX(-50%) scale(${scale})`,
                 }}
             />
 

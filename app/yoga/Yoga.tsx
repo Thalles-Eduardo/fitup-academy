@@ -25,7 +25,7 @@ export default function Yoga() {
             }
         });
 
-        
+
         SplitText.create(".title-yoga h2", {
             type: "chars",
             onSplit(self) {
@@ -40,7 +40,7 @@ export default function Yoga() {
             },
         });
 
-        
+
         SplitText.create(".title-yoga p", {
             type: "words",
             onSplit(self) {
@@ -55,7 +55,7 @@ export default function Yoga() {
             },
         });
 
-       
+
         tl.from(".container-yoga > *", {
             y: 80,
             opacity: 0,
@@ -65,14 +65,14 @@ export default function Yoga() {
             ease: "power3.out",
         })
 
-        
-        .from(".button-yoga", {
-            y: 60,
-            opacity: 0,
-            autoAlpha: 0,
-            duration: 0.7,
-            ease: "power3.out",
-        });
+
+            .from(".button-yoga", {
+                y: 60,
+                opacity: 0,
+                autoAlpha: 0,
+                duration: 0.7,
+                ease: "power3.out",
+            });
 
     }, []);
 
@@ -97,6 +97,8 @@ export default function Yoga() {
                     textButton="Muscle Stretch"
                     bottom="-2.5rem"
                     scale={0.55}
+                    scaleMobile={0.8}
+                    bottomMobile="1rem"
                 />
 
                 <YogaModel
@@ -106,6 +108,8 @@ export default function Yoga() {
                     textButton="Relaxation Stretch"
                     bottom="-4.5rem"
                     scale={0.52}
+                    scaleMobile={0.8}
+                    bottomMobile="0rem"
                 />
 
                 <YogaModel
@@ -115,6 +119,8 @@ export default function Yoga() {
                     textButton="Balance Booster"
                     bottom="-4.5rem"
                     scale={0.5}
+                    scaleMobile={0.8}
+                    bottomMobile="0rem"
                 />
 
                 <YogaModel
@@ -124,6 +130,7 @@ export default function Yoga() {
                     textButton="Flexibility Enhancer"
                     bottom="1.2rem"
                     scale={0.55}
+                    scaleMobile={1}
                 />
 
                 <YogaModel
@@ -133,6 +140,7 @@ export default function Yoga() {
                     textButton="Full-Body Stretch"
                     bottom="-2.3rem"
                     scale={0.5}
+                    scaleMobile={1}
                 />
 
                 <YogaModel
@@ -142,11 +150,13 @@ export default function Yoga() {
                     textButton="Strength Flow"
                     bottom="-4.5rem"
                     scale={0.5}
+                    scaleMobile={0.8}
+                    bottomMobile="-0.5rem"
                 />
 
             </div>
+            <button className="btn-yoga">Check All</button>
 
-            <button className="button-yoga">Check All</button>
 
         </section>
     );

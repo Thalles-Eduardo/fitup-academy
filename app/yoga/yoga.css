@@ -34,7 +34,7 @@
 }
 
 
-.button-yoga {
+.btn-yoga {
     cursor: pointer;
     display: flex;
     margin: 0 auto;
@@ -47,7 +47,7 @@
     font-size: 18px;
     color: white;
     background: var(--color-dark-blue);
-    
+
     --color: var(--color-light-blue);
     border: 2px solid var(--color-light-blue);
     color: white;
@@ -58,8 +58,8 @@
     z-index: 1;
 }
 
-.button-yoga::before,
-.button-yoga::after {
+.btn-yoga::before,
+.btn-yoga::after {
     content: "";
     position: absolute;
     width: 50px;
@@ -72,23 +72,23 @@
     transition: 0.7s ease-in-out;
 }
 
-.button-yoga::before {
+.btn-yoga::before {
     top: -1em;
     left: -1em;
 }
 
-.button-yoga::after {
+.btn-yoga::after {
     top: calc(100% + 1em);
     left: calc(100% + 1em);
 }
 
-.button-yoga:hover::before,
-.button-yoga:hover::after {
+.btn-yoga:hover::before,
+.btn-yoga:hover::after {
     width: 420px;
     height: 420px;
 }
 
-.button-yoga:hover {
+.btn-yoga:hover {
     background: linear-gradient(135deg,
             var(--color-dark-blue),
             var(--color-light-blue));
@@ -96,7 +96,60 @@
     transform: translateY(-3px);
 }
 
-.button-yoga:active {
+.btn-yoga:active {
     transform: scale(0.97);
     filter: brightness(0.9);
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+    .title-yoga {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .title-yoga h2 {
+        width: 100%;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    .title-yoga p {
+        width: 100%;
+        font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+
+    .container-yoga {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        row-gap: 2rem;
+        justify-content: center;
+        justify-items: center;
+        margin-top: 1rem;
+    }
+
+    .container-yoga:first-child{
+        transform: scale(1) !important;
+    }
+
+    .btn-yoga {
+        width: 80%;
+        max-width: 16rem;
+        font-size: 14px;
+        top: 1.2rem;
+    }
+
+    .btn-yoga::before,
+    .btn-yoga::after {
+        width: 35px;
+        height: 35px;
+    }
+
+    .btn-yoga:hover::before,
+    .btn-yoga:hover::after {
+        width: 300px;
+        height: 300px;
+    }
 }

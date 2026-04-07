@@ -23,7 +23,7 @@ export default function Home() {
       // Advantage — entra da esquerda
       gsap.set(advantageRef.current, { xPercent: -100, zIndex: 2 });
       ScrollTrigger.create({
-        trigger: ".panel",
+        trigger: ".scroll-container",
         start: "top top",
         end: "25% top",
         scrub: 2,

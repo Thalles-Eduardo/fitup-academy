@@ -161,15 +161,6 @@ export default function Advantage() {
                         </a>
 
                         <div className={`container-image ${photos[index].className}`}>
-
-                            <div className="stars"></div>
-                            <div className="shooting-star"></div>
-                            <div className="shooting-star"></div>
-                            <div className="shooting-star"></div>
-                            <div className="shooting-star"></div>
-                            <div className="shooting-star"></div>
-
-
                             <Image
                                 className="image"
                                 src={photos[index].src}
