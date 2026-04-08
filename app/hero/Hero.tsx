@@ -9,7 +9,6 @@ import { useState } from "react";
 
 import WeeklyOverview from "@/components/ui/WeeklyOverview";
 import { Separator } from "@/components/ui/Separator";
-import Link from "next/link";
 
 
 gsap.registerPlugin(SplitText, Flip);
@@ -18,6 +17,7 @@ export default function Hero() {
 
 
     useGSAP(() => {
+        
 
         SplitText.create(".left-hero h2", {
             type: "chars",
@@ -118,158 +118,163 @@ export default function Hero() {
 
     return (
         <section>
-            <nav>
-                <div className="left-container">
-                    <Image
-                        src="/images/Logo.png"
-                        alt="FitUp Academy Logo"
-                        width={70}
-                        height={56}
-                    />
-                    <h1>FitUp</h1>
-                </div>
-
-
-                <div className="right-container">
-                    <button className="contact-btn">
+            <div className="container">
+                <nav>
+                    <div className="left-container">
                         <Image
-                            src="/images/Contact.png"
-                            alt="Contact Icon"
-                            width={32}
-                            height={32}
+                            src="/images/Logo.png"
+                            alt="FitUp Academy Logo"
+                            width={70}
+                            height={56}
                         />
-                        CONTACT US
-                    </button>
-                </div>
-            </nav>
-
-
-            <div className="container-hero">
-                <div className="left-hero">
-                    <h2> Prefect Fitness Path With <span>fitup</span></h2>
-                    <p className="paragraph">Unlock your full potential with tailored training programs, all crafted to help you achieve your fitness goals</p>
-
-                    <div className="actions-hero">
-                        <button className="started-btn">Get Started</button>
-                        <Separator orientation="vertical" />
-                        <div className="community">
-                            <p>Join Our Community</p>
-                            <div className="social-community">
-                                <Image
-                                    src="/images/Discord.png"
-                                    alt="Community Icon"
-                                    width={18}
-                                    height={18}
-                                />
-                                <Image
-                                    src="/images/Facebook.png"
-                                    alt="Community Icon"
-                                    width={18}
-                                    height={18}
-                                />
-                                <Image
-                                    src="/images/Telegram.png"
-                                    alt="Community Icon"
-                                    width={18}
-                                    height={18}
-                                />
-                                <Image
-                                    src="/images/Twitter.png"
-                                    alt="Community Icon"
-                                    width={18}
-                                    height={18}
-                                />
-                            </div>
-                        </div>
+                        <h1>FitUp</h1>
                     </div>
 
-                    <div className="stats">
-                        <div className="stat-item">
-                            <span>500k+</span>
-                            <p>Personalized training programs delivered</p>
-                        </div>
 
-                        <div className="stat-item">
-                            <span>10k+</span>
-                            <p>Active members achieving results</p>
-                        </div>
+                    <div className="right-container">
+                        <button className="contact-btn">
+                            <Image
+                                src="/images/Contact.png"
+                                alt="Contact Icon"
+                                width={32}
+                                height={32}
+                            />
+                            CONTACT US
+                        </button>
                     </div>
-                </div>
+                </nav>
 
 
+                <div className="container-hero">
+                    <div className="left-hero">
+                        <h2>Prefect Fitness Path With <span>fitup</span></h2>
+                        <p className="paragraph">Unlock your full potential with tailored training programs, all crafted to help you achieve your fitness goals</p>
 
-                <div className="right-hero">
-                    <div className="container-members">
-                        <div className="members-info">
-                            <p>Members Joined</p>
-                            <div className="members">
-                                <div className="member">
+                        <div className="actions-hero">
+                            <button className="started-btn">Get Started</button>
+                            <Separator orientation="vertical" />
+                            <div className="community">
+                                <p>Join Our Community</p>
+                                <div className="social-community">
                                     <Image
-                                        className="image-member"
-                                        src="/images/Client-1.png"
-                                        alt="Client"
-                                        width={51}
-                                        height={34}
+                                        src="/images/Discord.png"
+                                        alt="Community Icon"
+                                        width={18}
+                                        height={18}
                                     />
                                     <Image
-                                        className="image-member"
-                                        src="/images/Client-2.png"
-                                        alt="Client"
-                                        width={51}
-                                        height={34}
+                                        src="/images/Facebook.png"
+                                        alt="Community Icon"
+                                        width={18}
+                                        height={18}
                                     />
                                     <Image
-                                        className="image-member"
-                                        src="/images/Client-3.png"
-                                        alt="Client"
-                                        width={51}
-                                        height={34}
+                                        src="/images/Telegram.png"
+                                        alt="Community Icon"
+                                        width={18}
+                                        height={18}
                                     />
                                     <Image
-                                        className="image-member"
-                                        src="/images/Client-4.png"
-                                        alt="Client"
-                                        width={51}
-                                        height={34}
+                                        src="/images/Twitter.png"
+                                        alt="Community Icon"
+                                        width={18}
+                                        height={18}
                                     />
                                 </div>
-                                <p>12k more</p>
+                            </div>
+                        </div>
+
+                        <div className="stats">
+                            <div className="stat-item">
+                                <span>500k+</span>
+                                <p>Personalized training programs delivered</p>
+                            </div>
+
+                            <div className="stat-item">
+                                <span>10k+</span>
+                                <p>Active members achieving results</p>
                             </div>
                         </div>
                     </div>
 
-                    <Image
-                        className="persona"
-                        src="/images/Person.png"
-                        alt="Hero Image"
-                        width={600}
-                        height={600}
-                    />
 
-                    <WeeklyOverview />
 
-                    <Image
-                        className="star-right"
-                        src="/images/Star.png"
-                        alt="Background Image"
-                        width={96}
-                        height={96}
-                    />
+                    <div className="right-hero">
+                        <div className="container-members">
+                            <div className="members-info">
+                                <p>Members Joined</p>
+                                <div className="members">
+                                    <div className="member">
+                                        <Image
+                                            className="image-member"
+                                            src="/images/Client-1.png"
+                                            alt="Client"
+                                            width={51}
+                                            height={34}
+                                        />
+                                        <Image
+                                            className="image-member"
+                                            src="/images/Client-2.png"
+                                            alt="Client"
+                                            width={51}
+                                            height={34}
+                                        />
+                                        <Image
+                                            className="image-member"
+                                            src="/images/Client-3.png"
+                                            alt="Client"
+                                            width={51}
+                                            height={34}
+                                        />
+                                        <Image
+                                            className="image-member"
+                                            src="/images/Client-4.png"
+                                            alt="Client"
+                                            width={51}
+                                            height={34}
+                                        />
+                                    </div>
+                                    <p>12k more</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <Image
+                            className="persona"
+                            src="/images/Person.png"
+                            alt="Hero Image"
+                            width={600}
+                            height={600}
+                        />
+
+                        <div className="weekly-overview">
+                            <WeeklyOverview />
+                        </div>
+
+                        <Image
+                            className="star-right"
+                            src="/images/Star.png"
+                            alt="Background Image"
+                            width={96}
+                            height={96}
+                        />
+
+                    </div>
+
 
                 </div>
+
+
+                <Image
+                    className="star"
+                    src="/images/Star.png"
+                    alt="Background Image"
+                    width={96}
+                    height={96}
+                />
 
 
             </div>
-
-
-            <Image
-                className="star"
-                src="/images/Star.png"
-                alt="Background Image"
-                width={96}
-                height={96}
-            />
-
 
         </section>
     )

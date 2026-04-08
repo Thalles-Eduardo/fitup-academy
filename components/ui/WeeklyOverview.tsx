@@ -9,7 +9,7 @@ const data = [
   { day: "T", value: 30, active: false },
   { day: "W", value: 55, active: false },
   { day: "T", value: 40, active: false },
-  { day: "F", value: 90, active: true, label: "TOP" },
+  { day: "F", value: 90, active: true },
   { day: "S", value: 60, active: false },
   { day: "S", value: 50, active: false },
 ];
@@ -24,7 +24,6 @@ export default function WeeklyOverview() {
     const el = containerRef.current;
     if (!el) return;
 
-    // ENTRADA DO CARD
     gsap.from(el, {
       y: 40,
       opacity: 0,
@@ -32,7 +31,6 @@ export default function WeeklyOverview() {
       ease: "power2.out",
     });
 
-    // BARRAS SUBINDO (ESCOPADO)
     gsap.from(el.querySelectorAll(".bar"), {
       height: 0,
       duration: 1,
@@ -46,39 +44,45 @@ export default function WeeklyOverview() {
   return (
     <div
       ref={containerRef}
-      className="weekly-overview"
+      className="relative inline-flex flex-col items-center backdrop-blur-md"
       style={{
-        position: "relative",
-        display: "inline-flex",
-        flexDirection: "column",
-        alignItems: "center",
-        borderRadius: "28px",
-        padding: "32px 36px 24px",
+        borderRadius: "clamp(16px, 2vw, 28px)",
+        padding: "clamp(16px, 3vw, 32px) clamp(18px, 3vw, 36px) clamp(16px, 2vw, 24px)",
+        minWidth: "clamp(180px, 20vw, 220px)",
+        height: "clamp(220px, 25vw, 320px)",
+        background: "rgba(255,255,255,0.26)",
         boxShadow: "0 4px 32px rgba(0,0,0,0.07)",
-        minWidth: 200,
-        minHeight: 100,
-        background: "rgba(255, 255, 255, 0.26)",
-        backdropFilter: "blur(5px)",
-        WebkitBackdropFilter: "blur(5px)",
+        right: "clamp(12px, 2vw, 32px)",
+        top: "clamp(12px, 2vw, 32px)",
       }}
     >
-      {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: 24, }}>
-        <div className="title-week" style={{ fontSize: 18, fontWeight: 700 }}>
+      {/* HEADER */}
+      <div
+        className="text-center"
+        style={{ marginBottom: "clamp(12px, 2vw, 24px)" }}
+      >
+        <div
+          className="font-bold"
+          style={{ fontSize: "clamp(14px, 1.5vw, 18px)" }}
+        >
           Weekly Overview
         </div>
-        <div className="sub-week" style={{ fontSize: 12, color: "#999" }}>
+
+        <div
+          className="text-gray-400"
+          style={{ fontSize: "clamp(10px, 1vw, 12px)" }}
+        >
           All week
         </div>
       </div>
 
-      {/* Chart */}
+      {/* CHART */}
       <div
+        className="flex items-end"
         style={{
-          display: "flex",
-          alignItems: "flex-end",
-          gap: 8,
-          height: 120,
+          marginTop: "clamp(32px, 6vw, 40px)",
+          gap: "clamp(4px, 1vw, 8px)",
+          height: "clamp(80px, 12vw, 120px)",
         }}
       >
         {data.map((item, i) => {
@@ -88,21 +92,20 @@ export default function WeeklyOverview() {
 
           return (
             <div
-              className="days-week"
               key={i}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 10,
-                cursor: "pointer",
-                position: "relative",
-              }}
+              className="flex flex-col items-center relative cursor-pointer"
+              style={{ gap: "clamp(6px, 1vw, 10px)" }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
               {isActive && (
-                <div className="top" style={{ position: "absolute", top: -22, fontSize: 9 }}>
+                <div
+                  className="absolute"
+                  style={{
+                    top: "clamp(-16px, -2vw, -22px)",
+                    fontSize: "clamp(8px, 0.8vw, 9px)",
+                  }}
+                >
                   TOP
                 </div>
               )}
@@ -110,18 +113,17 @@ export default function WeeklyOverview() {
               <div
                 className="bar"
                 style={{
-                  width: 22,
+                  width: "clamp(12px, 2vw, 22px)",
                   height: barHeight,
-                  borderRadius: 10,
+                  borderRadius: "clamp(6px, 1vw, 10px)",
                   background: isActive
                     ? "#2e2e2e"
                     : isHovered
                       ? "#b5b0a8"
                       : "#cdc9c2",
-                  transition: "background 0.2s ease, transform 0.15s ease",
+                  transition: "all 0.2s ease",
                   transform: isHovered ? "scaleY(1.04)" : "scaleY(1)",
                   transformOrigin: "bottom",
-                  marginTop: "auto",
                 }}
               />
             </div>
@@ -129,20 +131,38 @@ export default function WeeklyOverview() {
         })}
       </div>
 
-      {/* Labels */}
-      <div className="letter-week" style={{ display: "flex", gap: 8, marginTop: 10 }}>
+      {/* LABELS */}
+      <div
+        className="flex"
+        style={{
+          gap: "clamp(8px, 1vw, 8px)",
+          marginTop: "clamp(6px, 1vw, 10px)",
+        }}
+      >
         {data.map((item, i) => (
-          <div key={i} style={{ width: 22, textAlign: "center", fontSize: 11 }}>
+          <div
+            key={i}
+            className="text-center"
+            style={{
+              width: "clamp(12px, 2vw, 22px)",
+              fontSize: "clamp(9px, 1vw, 11px)",
+            }}
+          >
             {item.day}
           </div>
         ))}
       </div>
 
-      {/* Footer */}
-      <div className="perfomace" style={{ marginTop: 20, fontSize: 10 }}>
+      {/* FOOTER */}
+      <div
+        className="text-gray-500"
+        style={{
+          marginTop: "clamp(12px, 2vw, 20px)",
+          fontSize: "clamp(8px, 0.8vw, 10px)",
+        }}
+      >
         Your Performance *
       </div>
     </div>
   );
 }
-

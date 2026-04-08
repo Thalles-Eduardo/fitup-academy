@@ -1,8 +1,16 @@
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 5vw, 40px);
+    box-sizing: border-box;
+}
+
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0px 0px 0px;
+    padding-top: clamp(10px, 3vw, 20px);
 }
 
 .container-hero {
@@ -19,7 +27,7 @@ nav {
 
 .left-container h1 {
     font-family: 'Gorditas', cursive;
-    font-size: 24px;
+    font-size: clamp(18px, 2.5vw, 24px);
     color: var(--color-dark-blue);
 }
 
@@ -27,8 +35,8 @@ nav {
 .contact-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 40px;
+    gap: clamp(6px, 1vw, 10px);
+    padding: clamp(8px, 1.5vw, 12px) clamp(20px, 4vw, 40px);
     border-radius: 50px;
     cursor: pointer;
     border: 0;
@@ -36,7 +44,7 @@ nav {
     box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: clamp(12px, 1.2vw, 15px);
     transition: all 0.5s ease;
     color: white;
     font-family: var(--font-inter);
@@ -71,7 +79,7 @@ nav {
 }
 
 .left-hero h2 {
-    font-size: 80px;
+    font-size: clamp(36px, 6vw, 80px);
     color: var(--color-dark-blue);
 
 }
@@ -81,11 +89,11 @@ nav {
 }
 
 .paragraph {
-    margin-top: 28px;
-    font-size: 20px;
+    margin-top: clamp(16px, 2vw, 28px);
+    font-size: clamp(14px, 1.5vw, 20px);
     color: var(--color-black);
     opacity: 0.75;
-    letter-spacing: 1.5;
+    letter-spacing: 1.5px;
 }
 
 .actions-hero {
@@ -96,9 +104,9 @@ nav {
 }
 
 .started-btn {
-    width: 200px;
-    height: 50px;
-    padding: 15px 30px;
+    padding: clamp(10px, 1.5vw, 15px) clamp(20px, 4vw, 30px);
+    font-size: clamp(14px, 1.2vw, 16px);
+
     background-color: var(--color-white);
     color: var(--color-dark-blue);
     border: none;
@@ -144,7 +152,7 @@ nav {
 }
 
 .community p {
-    font-size: 14px;
+    font-size: clamp(12px, 1.2vw, 14px);
     color: var(--color-black);
     opacity: 0.75;
     font-weight: 500;
@@ -173,7 +181,7 @@ nav {
 }
 
 .stat-item span {
-    font-size: 64px;
+    font-size: clamp(48px, 5vw, 64px);
     color: var(--color-dark-blue);
     font-weight: bold;
     font-family: var(--font-inter);
@@ -181,7 +189,7 @@ nav {
 
 .stat-item p {
     margin-top: 0px;
-    font-size: 14px;
+    font-size: clamp(12px, 1.2vw, 14px);
     color: var(--color-black);
     opacity: 0.75;
     font-weight: 500;
@@ -192,12 +200,11 @@ nav {
 
 
 .right-hero {
-    width: clamp(350px, 40vw, 700px);
-    height: clamp(500px, 40vw, 350px);
+    width: clamp(280px, 40vw, 700px);
+    height: clamp(320px, 35vw, 500px);
     position: relative;
     display: flex;
-    align-items: start;
-    justify-content: end;
+    justify-content: flex-end;
 
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
@@ -214,9 +221,9 @@ nav {
 
 .container-members {
     position: absolute;
-    width: clamp(200px, 30vw, 200px);
-    bottom: 30px;
-    left: -60px;
+    width: clamp(140px, 20vw, 200px);
+    bottom: clamp(10px, 3vw, 30px);
+    left: clamp(-40px, -5vw, -60px);
     z-index: 100;
 
     background: rgba(255, 255, 255, 0.26);
@@ -255,7 +262,7 @@ nav {
 }
 
 .member img {
-    width: 32px;
+    width: clamp(24px, 3vw, 32px);
     height: auto;
 }
 
@@ -272,45 +279,10 @@ nav {
 .persona {
     position: absolute;
     top: 40%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-}
-
-.weekly-overview {
-    width: clamp(280px, 30vw, 200px);
-    padding: 10px;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-
-}
-
-
-.weekly-overview h3 {
-    text-align: center;
-    font-size: 14px;
-    color: var(--color-dark-blue);
-    font-weight: bold;
-    font-family: var(--font-inter);
-}
-
-
-.weekly-overview p {
-    position: relative;
-    bottom: 20px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--color-black);
-    opacity: 1;
-    font-weight: 500;
-    font-family: var(--font-inter);
+    left: 40%;
+    width: clamp(220px, 35vw, 600px);
+    height: auto;
+    display: block;
 }
 
 
@@ -323,17 +295,11 @@ nav {
 
 .star-right {
     position: absolute;
-    top: -40px;
-    left: -40px;
-    opacity: 1;
+    top: clamp(-20px, -3vw, -40px);
+    left: clamp(-20px, -3vw, -40px);
+    width: clamp(40px, 6vw, 96px);
+    height: auto;
 }
-
-
-
-
-
-
-
 
 
 @keyframes fadeBtn {
@@ -343,31 +309,13 @@ nav {
     }
 }
 
-.contact-btn.mobile {
-    width: 100%;
-    justify-content: center;
-}
-
-.contact-btn.mobile:active {
-    letter-spacing: 3px;
-    background-color: rgb(20, 28, 49, 0.75);
-    box-shadow: rgb(20, 28, 49, 0.75) 0px 0px 0px 0px;
-    transform: translateY(5px);
-}
 
 @media (max-width: 600px) {
 
-    nav {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-  
+    /* Nav */
     .contact-btn {
         width: 100%;
         height: 70%;
-        justify-content: center;
         font-size: 10px;
     }
 
@@ -380,41 +328,12 @@ nav {
         text-align: center;
     }
 
-    .left-hero {
-        align-items: center;
-    }
-
-    .left-hero h2 {
-        font-size: 36px;
-    }
-
-    .paragraph {
-        font-size: 1rem;
-    }
-
-    .started-btn {
-        font-size: 14px;
-        width: 150px;
-    }
-
-    .community p {
-        font-size: 0.9rem;
-    }
-
-    .stat-item span {
-        font-size: 36px;
-    }
-
-    .stat-item p {
-        font-size: 12px;
-    }
 
     .actions-hero {
         justify-content: center;
     }
 
 
-    /* STATS */
     .stats {
         justify-content: center;
         text-align: center;
@@ -422,13 +341,17 @@ nav {
         margin-bottom: 80px;
     }
 
-    /* HERO RIGHT */
+
     .right-hero {
         position: relative;
-        top: -2.5rem;
-        width: 90%;
-        height: 300px;
+        width: 100%;
+        height: 30vh;
+
+        display: flex;
         justify-content: center;
+        align-items: flex-end;
+
+        
     }
 
     /* CARDS FLUTUANTES */
@@ -437,39 +360,11 @@ nav {
     }
 
     .weekly-overview {
-        width: 50px;
-        height: 200px;
-        position: relative;
-        right: 6rem;
+        position: absolute;
+        top: 2vh;
+        right: 2vw;
     }
 
-    .title-week {
-        position: relative;
-        bottom: 1rem;
-        font-size: 12px !important;
-    }
-
-    .sub-week {
-        position: relative;
-        bottom: 1rem;
-        font-size: 10px !important;
-    }
-
-    .days-week {
-        position: relative;
-        bottom: 12px;
-    }
-
-    .top {
-        position: relative;
-        top: -15px !important;
-    }
-
-    .letter-week {
-        position: relative;
-        bottom: 1rem;
-        gap: 2px !important;
-    }
 
     .bar {
         width: 1rem !important;
@@ -477,12 +372,10 @@ nav {
 
     }
 
-    /* PERSONAGEM */
     .persona {
-        position: relative;
-        left: 10rem;
-        top: 148px;
-
+        top: 45%;
+        width: 19rem;
+        height: auto;
     }
 
     .perfomace {
