@@ -2,12 +2,11 @@
 
 import "./advantage.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText, ScrollTrigger } from "gsap/all";
-import { useRef } from "react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -16,53 +15,56 @@ export default function Advantage() {
     const [clicked, setClicked] = useState(false);
 
     const sectionRef = useRef(null);
+    const imageRef = useRef(null);
 
     const photos = [
-        {
-            className: "liver",
-            src: "/images/Liver.png",
-            alt: "Liver"
-        },
+
         {
             className: "heart",
             src: "/images/Heart.png",
-            alt: "Heart"
+            alt: "Heart",
+            scale: 2
+        },
+        {
+            className: "liver",
+            src: "/images/Liver.png",
+            alt: "Liver",
+            scale: 2
         },
         {
             className: "cells",
             src: "/images/Cells.png",
-            alt: "Cells"
+            alt: "Cells",
+            scale: 2
         }
-    ]
+
+    ];
 
     const next = () => {
-        setIndex((prev) => (prev + 1) % photos.length)
-    }
+        setIndex((prev) => (prev + 1) % photos.length);
+    };
 
     const prev = () => {
-        setIndex((prev) => (prev - 1 + photos.length) % photos.length)
-    }
+        setIndex((prev) => (prev - 1 + photos.length) % photos.length);
+    };
 
-
+    // animações de entrada da seção
     useGSAP(() => {
-
         const tl = gsap.timeline({
             delay: 2.0,
             scrollTrigger: {
                 trigger: sectionRef.current,
                 start: "top 75%",
                 toggleActions: "play none none none",
-            }
+            },
         });
 
-        // título
         SplitText.create(".info h2, .container-left h1", {
             type: "chars",
             onSplit(self) {
                 tl.from(self.chars, {
                     y: 80,
                     opacity: 0,
-                    autoAlpha: 0,
                     duration: 0.8,
                     stagger: 0.03,
                     ease: "power3.out",
@@ -70,14 +72,12 @@ export default function Advantage() {
             },
         });
 
-        // parágrafos
         SplitText.create(".info p, .paragraph-info", {
             type: "words",
             onSplit(self) {
                 tl.from(self.words, {
                     y: 20,
                     opacity: 0,
-                    autoAlpha: 0,
                     duration: 0.6,
                     stagger: 0.06,
                     ease: "power2.out",
@@ -85,51 +85,62 @@ export default function Advantage() {
             },
         });
 
-        // imagens da galeria
         tl.from(".container-image", {
             y: 60,
             opacity: 0,
-            autoAlpha: 0,
             duration: 0.8,
-            stagger: 0.2,
             ease: "power3.out",
         })
-
-            // cards
             .from(".card-left, .card-right", {
                 y: 50,
                 opacity: 0,
-                autoAlpha: 0,
                 duration: 0.7,
                 stagger: 0.25,
                 ease: "power3.out",
             })
-
-            // card calorias
             .from(".container-calories", {
                 y: 60,
                 opacity: 0,
-                autoAlpha: 0,
                 duration: 0.8,
-                ease: "power3.out",
             })
-
-            // imagem comida
             .from(".img-calories", {
                 x: 80,
                 opacity: 0,
-                autoAlpha: 0,
                 duration: 1,
-                ease: "power3.out",
             });
-
     }, []);
+
+    useGSAP(() => {
+        if (!imageRef.current) return;
+
+        const tl = gsap.timeline();
+
+        tl.to(imageRef.current, {
+            scale: 0.6,
+            opacity: 0,
+            y: -20,
+            duration: 0.25,
+            ease: "power2.in",
+        }).fromTo(
+            imageRef.current,
+            {
+                scale: 0.8,
+                opacity: 0,
+                y: 30,
+            },
+            {
+                scale: photos[index].scale,
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "power3.out",
+            }
+        );
+    }, [index]);
 
     return (
         <section ref={sectionRef} className="section-advantage">
-
             <div className="advante-container">
-
                 <Image
                     className="legs"
                     src="/images/Legs.png"
@@ -139,7 +150,6 @@ export default function Advantage() {
                 />
 
                 <div className="info">
-
                     <h2>WHY FITUP WORKS</h2>
 
                     <p>
@@ -149,19 +159,21 @@ export default function Advantage() {
                     </p>
 
                     <div className="container-galeria">
-
-                        <a className={`arrow arrow-left ${clicked ? "active" : ""}`}
+                        <a
+                            className={`arrow arrow-left ${clicked ? "active" : ""}`}
                             onClick={() => {
                                 setClicked(true);
                                 prev();
-
                                 setTimeout(() => setClicked(false), 400);
-                            }}>
-                            <Image className="image-arrow" src="/images/Arrow.png" alt="Left Arrow" width={24} height={24}></Image>
+                            }}
+                        >
+                            <span className="arrow-chevron primera"></span>
+                            <span className="arrow-chevron segunda"></span>
                         </a>
 
                         <div className={`container-image ${photos[index].className}`}>
                             <Image
+                                ref={imageRef}
                                 className="image"
                                 src={photos[index].src}
                                 alt={photos[index].alt}
@@ -170,32 +182,24 @@ export default function Advantage() {
                             />
                         </div>
 
-                        <a className={`arrow arrow-right ${clicked ? "active" : ""}`}
+                        <a
+                            className={`arrow arrow-right ${clicked ? "active" : ""}`}
                             onClick={() => {
                                 setClicked(true);
                                 next();
-
                                 setTimeout(() => setClicked(false), 400);
-                            }}>
-                            <Image className="image-arrow" src="/images/Arrow.png" alt="Left Arrow" width={24} height={24}></Image>
-
+                            }}
+                        >
+                            <span className="arrow-chevron primera"></span>
+                            <span className="arrow-chevron segunda"></span>
                         </a>
-
                     </div>
-
                 </div>
             </div>
 
-
             {/* seção dieta */}
-
-        <div>
-            
-        </div>
             <div className="dieta">
-
                 <div className="container-left">
-
                     <h1>
                         Fit your body with balanced <span>meals</span>
                     </h1>
@@ -230,7 +234,6 @@ export default function Advantage() {
                                     width={24}
                                     height={22}
                                 />
-
                                 <span className="meat meat-1"></span>
                                 <span className="meat meat-2"></span>
                                 <span className="meat meat-3"></span>
@@ -251,10 +254,8 @@ export default function Advantage() {
                                 <p>Vegan</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
 
                 <div className="container-right">
                     <div className="container-calories">
@@ -267,7 +268,9 @@ export default function Advantage() {
                             <div className="progress-bar"></div>
                         </div>
 
-                        <p className="sub-title">Stay on track with meal guidance</p>
+                        <p className="sub-title">
+                            Stay on track with meal guidance
+                        </p>
                     </div>
 
                     <Image
@@ -278,9 +281,7 @@ export default function Advantage() {
                         alt="Food"
                     />
                 </div>
-
             </div>
-
         </section>
     );
 }

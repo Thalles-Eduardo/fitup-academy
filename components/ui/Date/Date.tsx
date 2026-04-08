@@ -8,7 +8,7 @@ export default function Date({number, title, time} : {number: string, title: str
                 <h2>{title}</h2>
             </div>
             <p className="time">{time}</p>
-            <button className="get-started-btn">Reserve Your Spot</button>
+            <button className="started-btn btn-footer">Reserve Your Spot</button>
         </div>
     )
 }

@@ -16,7 +16,6 @@ gsap.registerPlugin(SplitText, Flip);
 
 export default function Hero() {
 
-    const [isOpen, setIsOpen] = useState(false);
 
     useGSAP(() => {
 
@@ -151,7 +150,7 @@ export default function Hero() {
                     <p className="paragraph">Unlock your full potential with tailored training programs, all crafted to help you achieve your fitness goals</p>
 
                     <div className="actions-hero">
-                        <button className="get-started-btn">Get Started</button>
+                        <button className="started-btn">Get Started</button>
                         <Separator orientation="vertical" />
                         <div className="community">
                             <p>Join Our Community</p>

@@ -65,82 +65,93 @@
 
 .container-galeria {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 18px;
     margin-top: 10px;
 }
 
-.container-image {
+/* ===== Arrow Navigation (circular chevron buttons) ===== */
+.arrow-left, .arrow-right {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    background: rgb(20, 28, 49, 1)
+}
 
+.arrow-left {
+    transform: rotate(180deg);
+}
 
+.arrow-right .arrow-chevron {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==");
+}
+
+.arrow-left .arrow-chevron {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==");
+}
+
+.arrow-chevron {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: arrowBounce 1.4s infinite linear;
+}
+
+.arrow-chevron.segunda {
+    margin-left: 2px;
+    animation-delay: 0.2s;
+}
+
+@keyframes arrowBounce {
+    0%   { opacity: 1; transform: translateX(0) scale(1); }
+    25%  { opacity: 0; transform: translateX(8px) scale(0.9); }
+    26%  { opacity: 0; transform: translateX(-8px) scale(0.9); }
+    55%  { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+.arrow-left:hover, .arrow-right:hover {
+    background: rgb(20, 28, 49, 0.8);
+}
+
+.arrow-left:hover .arrow-chevron,
+.arrow-right:hover .arrow-chevron {
+    animation: none;
+    opacity: 1;
+}
+
+.container-image {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 170px;
     height: 110px;
     border-radius: 16px;
-
     gap: 12px;
-    background: rgba(239, 239, 238, 0.5);
-
 
 }
 
-
-.container-image .image,
-.card-left img,
-.card-right img {
-    border-radius: 8px;
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    display: block;
-}
 
 .container-image .image {
     flex: 0 0 auto;
     width: 64px;
     height: 64px;
     position: relative;
-    top: 0.5rem;
-}
-
-.container-galeria button {
-    position: relative;
-    bottom: 10;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #A0A0A0;
-    border-radius: 18px;
-    padding: 6px 12px;
-    background: transparent;
-    cursor: pointer;
-
-
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(13.5px);
-    -webkit-backdrop-filter: blur(13.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-
+    top: 1.5rem;
+    object-fit: contain;
 }
 
 
-
-.container-galeria button span {
-    font-size: 9px;
-    font-weight: 500;
-    margin-left: 0;
-    font-family: var(--font-inter);
-}
-
-.container-galeria button img {
-    width: 20px;
-    height: 20px;
-}
 
 /* Segunda seção */
 .dieta {
@@ -469,11 +480,7 @@
         z-index: 10;
     }
 
-    .liver img {
-        position: relative;
-        top: -5px !important;
-        transform: scale(1.2);
-    }
+
 
     @keyframes fade {
         from {
@@ -488,184 +495,18 @@
     }
 
 
-    .stars {
-        position: absolute;
-        inset: 0;
-        /* ocupa só o container */
-        width: 1px;
-        height: 1px;
-        background: white;
-        z-index: 0;
 
-        box-shadow:
-            2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
-            22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
-            38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
-            53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white;
-
-        animation: twinkle 8s infinite linear;
+    /* Circular arrow buttons inherited from desktop */
+    .arrow-left, .arrow-right {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-width: 1.5px;
     }
 
-    .stars::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        width: 1px;
-        height: 1px;
-        background: white;
-
-        box-shadow:
-            8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
-            33vw 15vh 1px white, 41vw 28vh 2px white;
-
-        animation: twinkle 6s infinite linear reverse;
-    }
-
-    .shooting-star {
-        position: absolute;
-        width: 60px;
-        /* 👈 menor pra caber */
-        height: 2px;
-        background: linear-gradient(90deg, white, transparent);
-        animation: shoot 3s infinite ease-in;
-        z-index: 1;
-    }
-
-    /* posições adaptadas pro container pequeno */
-    .shooting-star:nth-child(2) {
-        top: 20%;
-        left: -50px;
-        animation-delay: 0s;
-    }
-
-    .shooting-star:nth-child(3) {
-        top: 40%;
-        left: -50px;
-        animation-delay: 1s;
-    }
-
-    .shooting-star:nth-child(4) {
-        top: 60%;
-        left: -50px;
-        animation-delay: 2s;
-    }
-
-    .shooting-star:nth-child(5) {
-        top: 30%;
-        left: -50px;
-        animation-delay: 1.5s;
-    }
-
-    .shooting-star:nth-child(6) {
-        top: 70%;
-        left: -50px;
-        animation-delay: 0.5s;
-    }
-
-    @keyframes twinkle {
-
-        0%,
-        100% {
-            opacity: 0.8;
-        }
-
-        50% {
-            opacity: 0.4;
-        }
-    }
-
-    @keyframes shoot {
-        0% {
-            transform: translateX(0) translateY(0) rotate(25deg);
-            opacity: 1;
-        }
-
-        100% {
-            transform: translateX(200px) translateY(80px) rotate(25deg);
-            opacity: 0;
-        }
-    }
-
-    .heart-img {
-        position: relative;
-        top: -2px !important;
-        z-index: 2;
-    }
-
-
-    .arrow {
-        height: 40px;
-        width: 40px;
-        display: block;
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
-    }
-
-    /* borda base */
-    .arrow::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border: 1px solid black;
-        transition: all 0.4s ease;
-    }
-
-    /* camada animada */
-    .arrow::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border: 1px solid #666;
-        transform: translateY(-100%);
-        transition: transform 0.4s ease;
-    }
-
-    /* HOVER */
-    .arrow:hover::after {
-        transform: translateY(0);
-    }
-
-    /* ACTIVE (mobile + React) */
-    .arrow.active::after {
-        transform: translateY(0);
-    }
-
-    .arrow-left {
-        align-content: center;
-        transform: rotate(90deg);
-    }
-
-    .image-arrow {
-        width: 20px;
-        height: 20px;
-        margin: 0 auto;
-        display: block;
-        scale: 0.9;
-    }
-
-    .arrow-right {
-        align-content: center;
-        transform: rotate(90deg);
-    }
-
-    .arrow-right .image-arrow {
-        transform: rotate(-90deg);
-    }
-
-    .arrow-left .image-arrow {
-        transform: rotate(90deg);
-    }
-
-    .arrow-slide {
-        left: 0;
-        top: -100%;
-        width: 100%;
-        height: 100%;
-        background: var(--color-dark-blue);
-        position: absolute;
-        display: block;
-        z-index: 0;
+    .arrow-chevron {
+        width: 10px;
+        height: 10px;
     }
 
 
@@ -739,7 +580,7 @@
     }
 
     .btn-meat {
-        
+
         width: 160px;
         font-size: 12px;
     }
@@ -785,7 +626,7 @@
     .img-calories {
         position: relative;
         bottom: 3rem;
-        right:3.6rem;
+        right: 3.6rem;
         width: 96px;
         transform: rotate(90deg);
         z-index: 0;
