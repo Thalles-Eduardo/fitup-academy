@@ -8,6 +8,12 @@ A modern, premium fitness and wellness platform showcasing yoga styles and healt
 
 > A fully animated fitness academy experience with dynamic transitions, interactive yoga style exploration, scroll-triggered animations, and premium health-focused design.
 
+
+
+https://github.com/user-attachments/assets/af7307a3-e91c-4a02-90c2-8b256f02b087
+
+
+
 ---
 
 # 🖼 Features
