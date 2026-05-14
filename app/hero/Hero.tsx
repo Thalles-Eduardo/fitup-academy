@@ -17,7 +17,7 @@ export default function Hero() {
 
 
     useGSAP(() => {
-        
+
 
         SplitText.create(".left-hero h2", {
             type: "chars",
@@ -73,6 +73,13 @@ export default function Hero() {
                     ease: "power1.out"
                 })
             },
+        });
+
+        SplitText.create(".suffix", {
+            type: "chars",
+            onSplit(self) {
+                gsap.from(self.chars, {})
+            }
         });
 
 
@@ -186,12 +193,12 @@ export default function Hero() {
 
                         <div className="stats">
                             <div className="stat-item">
-                                <span>500k+</span>
+                                <span>500<span className="suffix">k+</span></span>
                                 <p>Personalized training programs delivered</p>
                             </div>
 
                             <div className="stat-item">
-                                <span>10k+</span>
+                                <span>10<span className="suffix">k+</span></span>
                                 <p>Active members achieving results</p>
                             </div>
                         </div>

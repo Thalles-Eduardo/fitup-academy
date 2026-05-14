@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${gorditas.variable} ${inter.variable} antialiased`}
+        className={`${gorditas.variable} ${inter.variable} antialiased`} suppressHydrationWarning
       >
         {children}
       </body>

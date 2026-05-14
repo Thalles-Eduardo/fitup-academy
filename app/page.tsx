@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -20,41 +20,41 @@ export default function Home() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      // Advantage — entra da esquerda
-      gsap.set(advantageRef.current, { xPercent: -100, zIndex: 2 });
-      ScrollTrigger.create({
-        trigger: ".scroll-container",
-        start: "top top",
-        end: "25% top",
-        scrub: 2,
-        onUpdate: (self) => {
-          gsap.set(advantageRef.current, { xPercent: -100 + self.progress * 100 });
-        },
+      // Estados iniciais (fora da tela)
+      gsap.set(advantageRef.current, { xPercent: -100 });
+      gsap.set(yogaRef.current, { xPercent: 100 });
+      gsap.set(footerRef.current, { yPercent: 100 });
+
+      // 🔥 Timeline principal com scrub (o segredo aqui)
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top top",
+          end: "200% top", // controla o tempo total da animação
+          scrub: 1.5, // suavidade absurda aqui
+          pin: ".sticky-viewport", // mantém fixo enquanto anima
+          anticipatePin: 1,
+        }
       });
 
-      // Yoga — entra da direita
-      gsap.set(yogaRef.current, { xPercent: 100, zIndex: 3 });
-      ScrollTrigger.create({
-        trigger: ".scroll-container",
-        start: "25% top",
-        end: "50% top",
-        scrub: 2,
-        onUpdate: (self) => {
-          gsap.set(yogaRef.current, { xPercent: 100 - self.progress * 100 });
-        },
-      });
+      
+      tl.to(advantageRef.current, {
+        xPercent: 0,
+        ease: "power3.out",
+        duration: 1,
+      }, 0)
 
-      // Footer — entra de baixo
-      gsap.set(footerRef.current, { yPercent: 100, zIndex: 4 });
-      ScrollTrigger.create({
-        trigger: ".scroll-container",
-        start: "50% top",
-        end: "75% top",
-        scrub: 2,
-        onUpdate: (self) => {
-          gsap.set(footerRef.current, { yPercent: 100 - self.progress * 100 });
-        },
-      });
+      .to(yogaRef.current, {
+        xPercent: 0,
+        ease: "power3.out",
+        duration: 1,
+      }, 1)
+
+      .to(footerRef.current, {
+        yPercent: 0,
+        ease: "power3.out",
+        duration: 1,
+      }, 2); 
 
     }, containerRef);
 
@@ -64,11 +64,13 @@ export default function Home() {
   return (
     <main ref={containerRef} className="scroll-container">
       <div className="sticky-viewport">
+
         <video autoPlay loop muted playsInline className="video-bg">
           <source src="/Background.mp4" type="video/mp4" />
         </video>
+
         <div className="panel panel-hero">
-          <Hero/>
+          <Hero />
         </div>
 
         <div ref={advantageRef} className="panel panel-advantage">
